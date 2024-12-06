@@ -1,7 +1,8 @@
 import "./App.css";
+import Layout from "./components/layout/Layout";
 
 const App = () => {
-  return <div className="text-black">App</div>;
+  return <Layout></Layout>;
 };
 
 export default App;
