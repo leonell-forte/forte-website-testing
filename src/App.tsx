@@ -1,8 +1,13 @@
 import "./App.css";
-import Layout from "./components/layout/Layout";
+import QueryClientProvider from "./components/QueryClientProvider";
+import RouteProvider from "./components/home/RouteProvider";
 
 const App = () => {
-  return <Layout></Layout>;
+  return (
+    <QueryClientProvider>
+      <RouteProvider />
+    </QueryClientProvider>
+  );
 };
 
 export default App;
