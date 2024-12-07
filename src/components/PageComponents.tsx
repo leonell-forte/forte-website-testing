@@ -4,6 +4,7 @@ import { IndividualPage, PageCompomnentProps } from "../lib/types/pages";
 import { useQuery } from "@tanstack/react-query";
 import HeroSection from "./sections/HeroSection";
 import CardSection from "./sections/CardSection/CardSection";
+import FeatureSection from "./sections/FeatureSection/FeatureSection";
 
 const PageComponents = ({ id }: PageCompomnentProps) => {
   const { data, isLoading } = useQuery<IndividualPage>({
@@ -30,6 +31,14 @@ const PageComponents = ({ id }: PageCompomnentProps) => {
         case "CardSectionRecord":
           return (
             <CardSection
+              key={index}
+              {...item}
+            />
+          );
+
+        case "FeatureSectionRecord":
+          return (
+            <FeatureSection
               key={index}
               {...item}
             />

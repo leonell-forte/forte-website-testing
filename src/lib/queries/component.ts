@@ -37,3 +37,27 @@ export const cardSectionQuery = `
         }
     }
  `;
+
+export const featureSectionQuery = `
+     ... on FeatureSectionRecord {
+            __typename
+
+            title
+
+            features {
+                title
+                
+                headline
+                
+                description
+                
+                image {
+                    url
+                }
+                
+                points {
+                    description
+                }
+            }
+        }
+ `;

@@ -1,4 +1,8 @@
-import { cardSectionQuery, heroSectionQuery } from "./component";
+import {
+  cardSectionQuery,
+  featureSectionQuery,
+  heroSectionQuery,
+} from "./component";
 
 export const pageQuery = `
     query {
@@ -28,6 +32,8 @@ export const individualPageQuery = (id: string) => {
                 ${heroSectionQuery}
 
                 ${cardSectionQuery}
+
+                ${featureSectionQuery}
                 
             }
         }

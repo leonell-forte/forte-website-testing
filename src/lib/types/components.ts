@@ -31,3 +31,25 @@ export interface CardComponentData {
 
   cards: Card[];
 }
+
+export interface Feature {
+  title: string;
+
+  headline: string;
+
+  description: string;
+
+  image: Image;
+
+  points: {
+    description: string;
+  }[];
+}
+
+export interface FeatureSectionData {
+  __typename: ComponentRecords;
+
+  title: string;
+
+  features: Feature[];
+}
