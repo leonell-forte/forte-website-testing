@@ -1,11 +1,11 @@
 import { BrowserRouter as Router, Route, Routes } from "react-router-dom";
-import Layout from "../layout/Layout";
+import Layout from "./layout/Layout";
 import { Suspense } from "react";
 import { useQuery } from "@tanstack/react-query";
-import { fetchData } from "../../api/data-fetcher";
-import { pageQuery } from "../../lib/queries/pages";
+import { fetchData } from "../api/data-fetcher";
+import { pageQuery } from "../lib/queries/pages";
 import { AllPages } from "@/lib/types/pages";
-import PageComponents from "../PageComponents";
+import PageComponents from "./PageComponents";
 
 const RouteProvider = () => {
   const { data, isLoading } = useQuery<AllPages>({
@@ -13,8 +13,6 @@ const RouteProvider = () => {
 
     queryFn: () => fetchData(pageQuery),
   });
-
-  console.log(data);
 
   return (
     <Router>

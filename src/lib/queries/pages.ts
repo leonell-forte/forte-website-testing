@@ -1,3 +1,5 @@
+import { cardSectionQuery, heroSectionQuery } from "./component";
+
 export const pageQuery = `
     query {
         allPages {
@@ -6,6 +8,8 @@ export const pageQuery = `
             title
             
             slug
+
+            __typename
         }
     }
 `;
@@ -14,26 +18,17 @@ export const individualPageQuery = (id: string) => {
   return `
     query {
         page (filter: {
-            id: { eq: ${id} }
-        }) {
+
+            id: {eq: "${id}"}
+
+                }) {
+
             components {
-                id
 
-                mainText
+                ${heroSectionQuery}
 
-                secondaryText
-
-                buttonLabel
-
-                mobileImage{
-                url
-                }
-
-                desktopImage {
-                        url
-                }
-
-                __typename
+                ${cardSectionQuery}
+                
             }
         }
     }

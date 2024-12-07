@@ -1,40 +1,28 @@
+import { CardComponentData, HeroComponentData } from "./components";
+
 export interface Page {
   title: "string";
 
   slug: string;
 
   id: string;
+
+  __typename: string;
 }
 
 export interface AllPages {
   allPages: Page[];
 }
 
-export type ComponentRecords = "HeroSectionRecord";
+export type ComponentRecords = "HeroSectionRecord" | "CardSectionRecord";
 
 export interface Image {
   url: string;
 }
 
-export interface Component {
-  id: string;
-
-  __typename: ComponentRecords;
-
-  mainText: string;
-
-  secondaryText: string;
-
-  buttonLabel: string;
-
-  mobileImage: Image;
-
-  desktopImage: Image;
-}
-
 export interface IndividualPage {
   page: {
-    components: Component[];
+    components: any[];
   };
 }
 

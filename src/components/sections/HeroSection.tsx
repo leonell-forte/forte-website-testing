@@ -1,18 +1,11 @@
 import Button from "../ui/button/button";
-import { HeroSectionProps } from "@/lib/types/components";
 import { useScreenSize } from "../../lib/hooks";
+import { HeroComponentData } from "@/lib/types/components";
 
-const HeroSection = ({
-  mobileImage,
+const HeroSection = (props: HeroComponentData) => {
+  const { mainText, secondaryText, buttonLabel, mobileImage, desktopImage } =
+    props;
 
-  desktopImage,
-
-  mainText,
-
-  secondaryText,
-
-  buttonLabel,
-}: HeroSectionProps) => {
   const { isMobile } = useScreenSize();
 
   const renderImage = () => {
@@ -33,6 +26,7 @@ const HeroSection = ({
       <p className="text-[40px] md:text-[82px] font-lyon leading-[44px] md:leading-[90px]">
         {mainText}
       </p>
+
       <p className="text-[22px]">{secondaryText}</p>
 
       <Button variant="mint">{buttonLabel}</Button>
