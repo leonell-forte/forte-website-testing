@@ -55,6 +55,7 @@ const ContentSection = (props: ContentSectionData) => {
     <div
       style={{
         backgroundImage: `url(${backgroundImage?.url})`,
+
         backgroundSize: "cover",
       }}
     >
