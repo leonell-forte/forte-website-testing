@@ -109,6 +109,8 @@ export const contentSectionQuery = `
             __typename
 
             title
+
+            flex
             
             partner {
               image {

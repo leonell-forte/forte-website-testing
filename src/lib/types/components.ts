@@ -99,6 +99,8 @@ export interface PartnersContent {
 
   title: string;
 
+  flex: boolean;
+
   partner: Partner[];
 }
 
