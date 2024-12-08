@@ -8,7 +8,7 @@ import { AllPages } from "@/lib/types/pages";
 import PageComponents from "./PageComponents";
 
 const RouteProvider = () => {
-  const { data, isLoading } = useQuery<AllPages>({
+  const { data } = useQuery<AllPages>({
     queryKey: ["pages"],
 
     queryFn: () => fetchData(pageQuery),

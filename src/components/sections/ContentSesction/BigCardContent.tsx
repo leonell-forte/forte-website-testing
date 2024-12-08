@@ -24,7 +24,7 @@ const BigCardContent = (props: Type) => {
             >
               <img
                 src={image.url}
-                alt="image"
+                alt="card-image"
               />
 
               <div className="space-y-[25px] dm:space-y-[33px]">

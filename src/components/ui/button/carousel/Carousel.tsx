@@ -95,7 +95,7 @@ const Carousel = (props: ICarousel) => {
                 <div className="px-[3.17px] w-10 h-10 md:w-12 md:h-12 rounded-full bg-[#30F1FF1A] flex items-center justify-center">
                   <img
                     src={image.url}
-                    alt="image"
+                    alt="carouse-image"
                   />
                 </div>
 
