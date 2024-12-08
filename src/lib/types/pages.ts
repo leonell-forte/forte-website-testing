@@ -1,5 +1,3 @@
-import { CardComponentData, HeroComponentData } from "./components";
-
 export interface Page {
   title: "string";
 
@@ -14,7 +12,11 @@ export interface AllPages {
   allPages: Page[];
 }
 
-export type ComponentRecords = "HeroSectionRecord" | "CardSectionRecord";
+export type ComponentRecords =
+  | "HeroSectionRecord"
+  | "CardSectionRecord"
+  | "FeatureSectionRecord"
+  | "ContentSectionRecord";
 
 export interface Image {
   url: string;

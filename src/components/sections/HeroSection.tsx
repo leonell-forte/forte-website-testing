@@ -22,23 +22,25 @@ const HeroSection = (props: HeroComponentData) => {
   };
 
   return (
-    <div className="flex flex-col items-center text-center gap-[45px] py-12 md:py-[100px]">
-      <p className="text-[40px] md:text-[82px] font-lyon leading-[44px] md:leading-[90px]">
-        {mainText}
-      </p>
+    <div className="main-container">
+      <div className="flex flex-col items-center text-center gap-[45px] py-12 md:py-[100px]">
+        <p className="text-[40px] md:text-[82px] font-lyon leading-[44px] md:leading-[90px]">
+          {mainText}
+        </p>
 
-      <p className="text-[22px]">{secondaryText}</p>
+        <p className="text-[22px]">{secondaryText}</p>
 
-      <Button variant="mint">{buttonLabel}</Button>
+        <Button variant="mint">{buttonLabel}</Button>
 
-      {renderImage() && (
-        <div className="max-w-[1097px] mx-auto">
-          <img
-            src={renderImage()}
-            alt="mobile"
-          />
-        </div>
-      )}
+        {renderImage() && (
+          <div className="max-w-[1097px] mx-auto">
+            <img
+              src={renderImage()}
+              alt="mobile"
+            />
+          </div>
+        )}
+      </div>
     </div>
   );
 };

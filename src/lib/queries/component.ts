@@ -61,3 +61,61 @@ export const featureSectionQuery = `
             }
         }
  `;
+
+export const contentSectionQuery = `
+   ... on ContentSectionRecord {
+        __typename
+
+        backgroundImage {
+          url
+        }
+
+        content {
+          ... on SmallCardContentRecord {
+            __typename
+
+            title
+
+            description
+
+            smallCards {
+              title
+              
+              description
+              
+              link
+            }
+          }
+            
+          ... on BigCardContentRecord {
+            __typename
+
+            title
+            
+            description
+            
+            bigCard {
+              image {
+                url
+              }
+                
+              title
+              
+              description
+            }
+          }
+          
+          ... on PartnersContentRecord {
+            __typename
+
+            title
+            
+            partner {
+              image {
+                url
+              }
+            }
+          }
+        }
+      }
+ `;

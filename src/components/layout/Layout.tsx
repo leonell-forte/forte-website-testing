@@ -17,7 +17,7 @@ const Layout = ({ children }: ILayout) => {
 
       {!isLoading && <Header {...data!.header!} />}
 
-      <div className="max-w-[1440px] px-5 md:px-[61px] mx-auto">{children}</div>
+      <div>{children}</div>
     </div>
   );
 };

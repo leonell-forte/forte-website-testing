@@ -1,5 +1,6 @@
 import {
   cardSectionQuery,
+  contentSectionQuery,
   featureSectionQuery,
   heroSectionQuery,
 } from "./component";
@@ -34,6 +35,8 @@ export const individualPageQuery = (id: string) => {
                 ${cardSectionQuery}
 
                 ${featureSectionQuery}
+
+                ${contentSectionQuery}
                 
             }
         }
