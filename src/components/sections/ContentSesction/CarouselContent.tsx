@@ -1,19 +1,15 @@
-import { CarouselContent as Type } from "@/lib/types/components";
+import Carousel from "../../../components/ui/button/carousel/Carousel";
+import { CarouselContent as Type } from "../../../lib/types/components";
 
 const CarouselContent = (props: Type) => {
   const { backgroundImage, carouselItems } = props;
+
   return (
-    <div>
-      {carouselItems.map((item, index) => {
-        return (
-          <div
-            key={index}
-            style={{
-              backgroundImage: `url(${backgroundImage})`,
-            }}
-          ></div>
-        );
-      })}
+    <div className="py-6">
+      <Carousel
+        items={carouselItems}
+        background={backgroundImage.url}
+      />
     </div>
   );
 };
