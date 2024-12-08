@@ -6,6 +6,7 @@ import HeroSection from "./sections/HeroSection";
 import CardSection from "./sections/CardSection/CardSection";
 import FeatureSection from "./sections/FeatureSection/FeatureSection";
 import ContentSection from "./sections/ContentSesction/ContentSection";
+import CarouselContent from "./sections/ContentSesction/CarouselContent";
 
 const PageComponents = ({ id }: PageCompomnentProps) => {
   const { data, isLoading } = useQuery<IndividualPage>({

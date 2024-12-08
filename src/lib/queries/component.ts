@@ -116,6 +116,24 @@ export const contentSectionQuery = `
               }
             }
           }
+
+           ... on CarouselContentRecord {
+            __typename
+
+            backgroundImage {
+              url
+            }
+
+            carouselItems {
+              mainText
+
+              secondaryText
+
+              image {
+                url
+              }
+            }
+          }
         }
       }
  `;

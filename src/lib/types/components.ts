@@ -102,10 +102,30 @@ export interface PartnersContent {
   partner: Partner[];
 }
 
+export interface CarouselItem {
+  mainText: string;
+
+  secondaryText: string;
+
+  image: Image;
+}
+
+export interface CarouselContent {
+  __typename: "CarouselContentRecord";
+
+  backgroundImage: Image;
+
+  carouselItems: CarouselItem[];
+}
+
 export interface ContentSectionData {
   __typename: string;
 
   backgroundImage: Image;
 
-  content: SmallCardContent[] | BigCardContent[] | PartnersContent[];
+  content:
+    | SmallCardContent[]
+    | BigCardContent[]
+    | PartnersContent[]
+    | CarouselContent[];
 }

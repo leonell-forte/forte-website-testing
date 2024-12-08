@@ -3,7 +3,7 @@ import { ContentSectionData } from "../../../lib/types/components";
 import SmallCardContent from "./SmallCardContent";
 import BigCardContent from "./BigCardContent";
 import PartnersContent from "./PartnersContent";
-import { url } from "inspector";
+import CarouselContent from "./CarouselContent";
 
 const ContentSection = (props: ContentSectionData) => {
   const { content, backgroundImage } = props;
@@ -36,6 +36,17 @@ const ContentSection = (props: ContentSectionData) => {
               {...item}
             />
           );
+
+        case "CarouselContentRecord":
+          return (
+            <CarouselContent
+              key={index}
+              {...item}
+            />
+          );
+
+        default:
+          return null;
       }
     });
   }, [content]);
