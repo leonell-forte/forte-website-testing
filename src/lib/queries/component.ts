@@ -8,6 +8,8 @@ export const heroSectionQuery = `
 
         buttonLabel
 
+        buttonLink
+
         mobileImage {
             url
         }

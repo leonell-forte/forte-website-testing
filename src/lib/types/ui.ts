@@ -7,6 +7,8 @@ export interface IButton extends ButtonHTMLAttributes<HTMLButtonElement> {
   small?: boolean;
 
   variant?: VariantTypes;
+
+  href?: string;
 }
 
 export interface ICarousel {

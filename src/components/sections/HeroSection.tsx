@@ -3,8 +3,14 @@ import { useScreenSize } from "../../lib/hooks";
 import { HeroComponentData } from "@/lib/types/components";
 
 const HeroSection = (props: HeroComponentData) => {
-  const { mainText, secondaryText, buttonLabel, mobileImage, desktopImage } =
-    props;
+  const {
+    mainText,
+    secondaryText,
+    buttonLabel,
+    buttonLink,
+    mobileImage,
+    desktopImage,
+  } = props;
 
   const { isMobile } = useScreenSize();
 
@@ -30,7 +36,12 @@ const HeroSection = (props: HeroComponentData) => {
 
         <p className="text-[22px]">{secondaryText}</p>
 
-        <Button variant="mint">{buttonLabel}</Button>
+        <Button
+          href={buttonLink}
+          variant="mint"
+        >
+          {buttonLabel}
+        </Button>
 
         {renderImage() && (
           <div className="max-w-[1097px] mx-auto">

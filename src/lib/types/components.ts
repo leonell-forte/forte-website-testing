@@ -5,6 +5,8 @@ export interface HeroComponentData {
 
   buttonLabel: string;
 
+  buttonLink: string;
+
   mainText: string;
 
   secondaryText: string;
