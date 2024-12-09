@@ -16,7 +16,8 @@ export type ComponentRecords =
   | "HeroSectionRecord"
   | "CardSectionRecord"
   | "FeatureSectionRecord"
-  | "ContentSectionRecord";
+  | "ContentSectionRecord"
+  | "CTASectionRecord";
 
 export interface Image {
   url: string;

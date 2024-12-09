@@ -6,6 +6,7 @@ import HeroSection from "./sections/HeroSection";
 import CardSection from "./sections/CardSection/CardSection";
 import FeatureSection from "./sections/FeatureSection/FeatureSection";
 import ContentSection from "./sections/ContentSesction/ContentSection";
+import CTASection from "./sections/CTASection/CTASection";
 
 const PageComponents = ({ id }: PageCompomnentProps) => {
   const { data } = useQuery<IndividualPage>({
@@ -48,6 +49,14 @@ const PageComponents = ({ id }: PageCompomnentProps) => {
         case "ContentSectionRecord":
           return (
             <ContentSection
+              key={index}
+              {...item}
+            />
+          );
+
+        case "CtaSectionRecord":
+          return (
+            <CTASection
               key={index}
               {...item}
             />

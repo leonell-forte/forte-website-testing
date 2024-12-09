@@ -12,4 +12,8 @@ export type HeaderType = {
   };
 
   menu: Menus[];
+
+  buttonLabel: string;
+
+  buttonLink: string;
 };

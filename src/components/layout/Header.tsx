@@ -12,7 +12,7 @@ import { Link, useLocation } from "react-router-dom";
 const Header = (props: HeaderType) => {
   const [isOpen, setIsOpen] = useState(false);
 
-  const { logo, menu: menus } = props;
+  const { logo, menu: menus, buttonLabel, buttonLink } = props;
 
   const { pathname } = useLocation();
 
@@ -68,7 +68,12 @@ const Header = (props: HeaderType) => {
           </div>
         </div>
 
-        <Button small>Contact</Button>
+        <Button
+          href={buttonLink}
+          small
+        >
+          {buttonLabel}
+        </Button>
 
         <button
           onClick={() => setIsOpen((prev) => !prev)}

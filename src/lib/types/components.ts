@@ -133,3 +133,19 @@ export interface ContentSectionData {
     | PartnersContent[]
     | CarouselContent[];
 }
+
+export interface CTASectionData {
+  __typename: string;
+
+  title: string;
+
+  description: string;
+
+  buttonLink: string;
+
+  buttonLabel: string;
+
+  mobileBackground: Image;
+
+  desktopBackground: Image;
+}

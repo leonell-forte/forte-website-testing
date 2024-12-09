@@ -141,3 +141,25 @@ export const contentSectionQuery = `
         }
       }
  `;
+
+export const ctaSectionQuery = `
+  ... on CtaSectionRecord {
+      __typename
+  
+      title
+      
+      description
+      
+      buttonLink
+      
+      buttonLabel
+      
+      mobileBackground {
+        url
+      }
+        
+      desktopBackground {
+        url
+      }
+    }
+ `;

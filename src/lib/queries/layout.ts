@@ -4,10 +4,15 @@ export const layoutQuery = `
             logo {
               url
             }
+
             menu {
                 label
                 link
-            }   
+            }  
+
+            buttonLabel
+            
+            buttonLink 
         }
     }
 `;
