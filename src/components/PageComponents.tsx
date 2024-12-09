@@ -15,8 +15,6 @@ const PageComponents = ({ id }: PageCompomnentProps) => {
     queryFn: () => fetchData(individualPageQuery(id)),
   });
 
-  console.log(data, "components");
-
   const renderComponents = () => {
     return data?.page.components.map((item, index) => {
       const { __typename } = item;

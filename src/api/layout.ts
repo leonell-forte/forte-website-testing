@@ -1,14 +1,14 @@
 import { layoutQuery } from "../lib/queries/layout";
 import { api } from "../lib/axios-config";
-import { HeaderType } from "../lib/types/layout";
+import { LayoutType } from "../lib/types/layout";
 
 class LayoutService {
-  async getLayoutData(): Promise<HeaderType> {
+  async getLayoutData(): Promise<LayoutType> {
     const response = await api.post("", {
       query: layoutQuery,
     });
 
-    return response.data.data.header;
+    return response.data.data;
   }
 }
 

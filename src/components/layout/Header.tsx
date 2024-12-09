@@ -6,10 +6,10 @@ import closedMenu from "../../assets/images/icons/closedMenu.svg";
 import { useState } from "react";
 import Button from "../ui/button/button";
 import classNames from "classnames";
-import { HeaderType } from "../../lib/types/layout";
+import { IHeader } from "../../lib/types/layout";
 import { Link, useLocation } from "react-router-dom";
 
-const Header = (props: HeaderType) => {
+const Header = (props: IHeader) => {
   const [isOpen, setIsOpen] = useState(false);
 
   const { logo, menu: menus, buttonLabel, buttonLink } = props;

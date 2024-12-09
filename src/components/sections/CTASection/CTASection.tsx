@@ -21,7 +21,7 @@ const CTASection = (props: CTASectionData) => {
 
   return (
     <div
-      className="py-[60px]"
+      className="py-[60px] md:py-[130px] lg:py-[150px]"
       style={{
         backgroundImage: `url(${
           isDesktop ? desktopBackground.url : mobileBackground.url
