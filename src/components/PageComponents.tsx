@@ -5,8 +5,11 @@ import { useQuery } from "@tanstack/react-query";
 import HeroSection from "./sections/HeroSection";
 import CardSection from "./sections/CardSection/CardSection";
 import FeatureSection from "./sections/FeatureSection/FeatureSection";
-import ContentSection from "./sections/ContentSesction/ContentSection";
 import CTASection from "./sections/CTASection/CTASection";
+import SmallCardSection from "./sections/SmallCardSection";
+import BigCardSection from "./sections/BigCardSection";
+import PartnersSection from "./sections/PartnersSection";
+import CarouselSection from "./sections/CarouselSection";
 
 const PageComponents = ({ id }: PageCompomnentProps) => {
   const { data } = useQuery<IndividualPage>({
@@ -15,54 +18,97 @@ const PageComponents = ({ id }: PageCompomnentProps) => {
     queryFn: () => fetchData(individualPageQuery(id)),
   });
 
+  console.log(data);
+
   const renderComponents = () => {
-    return data?.page.components.map((item, index) => {
-      const { __typename } = item;
+    return data?.page.containers.map((item, index) => {
+      const { backgroundImage } = item;
+      return (
+        <div
+          key={index}
+          style={{
+            backgroundImage: `url(${backgroundImage?.url})`,
 
-      switch (__typename) {
-        case "HeroSectionRecord":
-          return (
-            <HeroSection
-              key={index}
-              {...item}
-            />
-          );
+            backgroundPosition: "center",
 
-        case "CardSectionRecord":
-          return (
-            <CardSection
-              key={index}
-              {...item}
-            />
-          );
+            backgroundSize: "cover",
+          }}
+        >
+          {item.components.map((item, index) => {
+            const { __typename } = item;
 
-        case "FeatureSectionRecord":
-          return (
-            <FeatureSection
-              key={index}
-              {...item}
-            />
-          );
+            switch (__typename) {
+              case "HeroSectionRecord":
+                return (
+                  <HeroSection
+                    key={index}
+                    index={index}
+                    {...item}
+                  />
+                );
 
-        case "ContentSectionRecord":
-          return (
-            <ContentSection
-              key={index}
-              {...item}
-            />
-          );
+              case "CardSectionRecord":
+                return (
+                  <CardSection
+                    key={index}
+                    {...item}
+                  />
+                );
 
-        case "CtaSectionRecord":
-          return (
-            <CTASection
-              key={index}
-              {...item}
-            />
-          );
+              case "FeatureSectionRecord":
+                return (
+                  <FeatureSection
+                    key={index}
+                    {...item}
+                  />
+                );
 
-        default:
-          return "";
-      }
+              case "CtaSectionRecord":
+                return (
+                  <CTASection
+                    key={index}
+                    {...item}
+                  />
+                );
+
+              case "SmallCardSectionRecord":
+                return (
+                  <SmallCardSection
+                    key={index}
+                    {...item}
+                  />
+                );
+
+              case "BigCardSectionRecord":
+                return (
+                  <BigCardSection
+                    key={index}
+                    {...item}
+                  />
+                );
+
+              case "PartnersSectionRecord":
+                return (
+                  <PartnersSection
+                    key={index}
+                    {...item}
+                  />
+                );
+
+              case "CarouselSectionRecord":
+                return (
+                  <CarouselSection
+                    key={index}
+                    {...item}
+                  />
+                );
+
+              default:
+                return "";
+            }
+          })}
+        </div>
+      );
     });
   };
 

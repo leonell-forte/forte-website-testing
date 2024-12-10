@@ -1,6 +1,14 @@
 import { ComponentRecords, Image } from "./pages";
 
-export interface HeroComponentData {
+export interface IPaddings {
+  mobilePadding: string;
+
+  tabletPadding: string;
+
+  desktopPadding: string;
+}
+
+export interface HeroComponentData extends IPaddings {
   __typename: ComponentRecords;
 
   buttonLabel: string;
@@ -14,6 +22,8 @@ export interface HeroComponentData {
   mobileImage: Image;
 
   desktopImage: Image;
+
+  index?: number;
 }
 
 export interface Card {
@@ -24,7 +34,7 @@ export interface Card {
   image: Image;
 }
 
-export interface CardComponentData {
+export interface CardComponentData extends IPaddings {
   __typename: ComponentRecords;
 
   header: string;
@@ -48,7 +58,7 @@ export interface Feature {
   }[];
 }
 
-export interface FeatureSectionData {
+export interface FeatureSectionData extends IPaddings {
   __typename: ComponentRecords;
 
   title: string;

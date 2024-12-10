@@ -1,9 +1,12 @@
 import {
+  bigCardSectionQuery,
   cardSectionQuery,
-  contentSectionQuery,
+  carouselSectionQuery,
   ctaSectionQuery,
   featureSectionQuery,
   heroSectionQuery,
+  partnersSectionQuery,
+  smallCardSectionQuery,
 } from "./component";
 
 export const pageQuery = `
@@ -29,18 +32,33 @@ export const individualPageQuery = (id: string) => {
 
                 }) {
 
-            components {
+           containers {
 
-                ${heroSectionQuery}
+                backgroundImage {
+                    url
+                }
+           
+                components {
 
-                ${cardSectionQuery}
+                    ${heroSectionQuery}
 
-                ${featureSectionQuery}
+                    ${cardSectionQuery}
 
-                ${contentSectionQuery}
+                    ${featureSectionQuery}
 
-                ${ctaSectionQuery}
-            }
+                    ${ctaSectionQuery}
+
+                    ${smallCardSectionQuery}
+
+                    ${bigCardSectionQuery}
+
+                    ${partnersSectionQuery}
+
+                    ${carouselSectionQuery}
+
+                }
+
+           }
         }
     }
 `;

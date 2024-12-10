@@ -16,8 +16,6 @@ const Layout = ({ children }: ILayout) => {
 
   return (
     <div>
-      <div className="bg-body-gradient w-screen h-screen fixed top-0 left-0 z-[-1]" />
-
       {!isLoading && <Header {...data!.header!} />}
 
       <div>{children}</div>
