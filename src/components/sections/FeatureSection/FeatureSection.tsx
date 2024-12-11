@@ -21,7 +21,7 @@ const FeatureSection = (props: FeatureSectionData) => {
           padding,
         }}
       >
-        <div className="space-y-10 md:space-y-[85px] lg:space-y-[100px]">
+        <div className="space-y-5 md:space-y-10">
           <p className="text-center font-lyon text-[32px] leading-[38.4px] md:text-[66px] md:leading-[66px] lg:leading-[79.2px] tracking-[-2%]">
             {title}
           </p>

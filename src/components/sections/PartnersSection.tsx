@@ -27,7 +27,7 @@ const PartnersSection = (props: Type) => {
 
   return (
     <div style={{ padding }}>
-      <div className="space-y-10 md:space-y-[85px] lg:space-y-[100px] main-container">
+      <div className="space-y-6 md:space-y-10 main-container">
         <p className="text-center font-lyon text-[32px] md:text-[66px] leading-[38.4px] md:leading-[79.2px]">
           {title}
         </p>

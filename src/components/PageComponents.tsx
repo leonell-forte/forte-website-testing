@@ -10,6 +10,7 @@ import SmallCardSection from "./sections/SmallCardSection";
 import BigCardSection from "./sections/BigCardSection";
 import PartnersSection from "./sections/PartnersSection";
 import CarouselSection from "./sections/CarouselSection";
+import { useScreenSize } from "../lib/hooks";
 
 const PageComponents = ({ id }: PageCompomnentProps) => {
   const { data } = useQuery<IndividualPage>({
@@ -18,16 +19,22 @@ const PageComponents = ({ id }: PageCompomnentProps) => {
     queryFn: () => fetchData(individualPageQuery(id)),
   });
 
+  const { isMobile } = useScreenSize();
+
   console.log(data);
 
   const renderComponents = () => {
     return data?.page.containers.map((item, index) => {
-      const { backgroundImage } = item;
+      const { mobileBackgroundImage, desktopBackgroundImage } = item;
       return (
         <div
           key={index}
           style={{
-            backgroundImage: `url(${backgroundImage?.url})`,
+            backgroundImage: `url(${
+              isMobile
+                ? mobileBackgroundImage?.url || desktopBackgroundImage?.url
+                : desktopBackgroundImage?.url
+            })`,
 
             backgroundPosition: "center",
 
