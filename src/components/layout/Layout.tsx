@@ -1,9 +1,11 @@
 import { useQuery } from "@tanstack/react-query";
-import { LayoutType, ILayout } from "../../lib/types/layout";
-import Header from "./Header";
+
 import { fetchData } from "../../api/data-fetcher";
 import { layoutQuery } from "../../lib/queries/layout";
+import { ILayout, LayoutType } from "../../lib/types/layout";
+import { ScrollArea } from "../ui/scroll-area/ScrollArea";
 import Footer from "./Footer";
+import Header from "./Header";
 
 const Layout = ({ children }: ILayout) => {
   const { data, isLoading } = useQuery<LayoutType>({
@@ -15,13 +17,13 @@ const Layout = ({ children }: ILayout) => {
   console.log(data, "123");
 
   return (
-    <div>
+    <ScrollArea className="h-screen">
       {!isLoading && <Header {...data!.header!} />}
 
       <div>{children}</div>
 
       {!isLoading && <Footer {...data!.footer!} />}
-    </div>
+    </ScrollArea>
   );
 };
 

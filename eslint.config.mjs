@@ -6,6 +6,7 @@ import pluginReact from "eslint-plugin-react";
 
 export default [
   {
+    extends: ["plugin:prettier/recommended"],
     files: ["**/*.{js,mjs,cjs,ts,jsx,tsx}"],
     languageOptions: {
       globals: {
