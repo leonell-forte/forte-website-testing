@@ -29,7 +29,9 @@ export interface IndividualPage {
   page: {
     title?: string;
     containers: {
-      backgroundImage: Image;
+      mobileBackgroundImage: Image;
+
+      desktopBackgroundImage: Image;
 
       components: any[];
     }[];

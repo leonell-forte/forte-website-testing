@@ -48,7 +48,7 @@ const CTASection = (props: CTASectionData) => {
       >
         <div style={{ padding }}>
           <div className="main-container">
-            <div className="bg-[#30F1FF1A] backdrop-blur-[69.83px] px-[21px] py-[140px] rounded-[9px] flex flex-col items-center text-center space-y-[30px] md:space-y-[60px]">
+            <div className="bg-[#30F1FF1A] backdrop-blur-[69.83px] px-[21px] py-[140px] rounded-[9px] md:rounded-[18px] flex flex-col items-center text-center space-y-[30px] md:space-y-[60px]">
               <div className="max-w-[702px] space-y-[30px] md:space-y-10">
                 <p className="text-[40px] md:text-[82px] font-lyon leading-[44px] md:leading-[90.2px]">
                   {title}

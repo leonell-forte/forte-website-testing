@@ -12,6 +12,7 @@ import HeroSection from "./sections/HeroSection";
 import PartnersSection from "./sections/PartnersSection";
 import SmallCardSection from "./sections/SmallCardSection";
 import Contact from "./sections/static/Contact";
+import { useScreenSize } from "../lib/hooks";
 
 const CONTACT_SLUG = "/contact";
 
@@ -22,16 +23,22 @@ const PageComponents = ({ id, slug }: PageCompomnentProps) => {
     queryFn: () => fetchData(individualPageQuery(id)),
   });
 
+  const { isMobile } = useScreenSize();
+
   console.log(data);
 
   const renderComponents = () => {
     return data?.page.containers.map((item, index) => {
-      const { backgroundImage } = item;
+      const { mobileBackgroundImage, desktopBackgroundImage } = item;
       return (
         <div
           key={index}
           style={{
-            backgroundImage: `url(${backgroundImage?.url})`,
+            backgroundImage: `url(${
+              isMobile
+                ? mobileBackgroundImage?.url || desktopBackgroundImage?.url
+                : desktopBackgroundImage?.url
+            })`,
 
             backgroundPosition: "center",
 

@@ -37,9 +37,11 @@ export const individualPageQuery = (id: string) => {
 
            containers {
 
-        
+                mobileBackgroundImage {
+                    url
+                }
 
-                backgroundImage {
+                desktopBackgroundImage {
                     url
                 }
            
