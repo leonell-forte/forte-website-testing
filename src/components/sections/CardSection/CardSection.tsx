@@ -32,8 +32,8 @@ const CardSection = (props: CardComponentData) => {
           padding,
         }}
       >
-        <div className="space-y-10 md:space-y-[85px] lg:space-y-[100px]">
-          <div className="text-center space-y-[30px] md:space-y-[45px] px-5">
+        <div className="space-y-10">
+          <div className="text-center space-y-[30px] px-5">
             <p className="font-lyon text-[32px] md:text-[66px] leading-[38.4px] md:leading-[79.2px] tracking-[-2%]">
               {header}
             </p>
