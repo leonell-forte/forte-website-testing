@@ -53,7 +53,7 @@ const Input = forwardRef<HTMLInputElement, Props>(function FI(
               ? "border-red-400 text-red-400 placeholder:text-red-400/70"
               : "focus:border-selected text-white placeholder:text-white/70"
           )}
-          placeholder={readOnly ? "-" : label}
+          placeholder={readOnly ? "-" : placeholder || label}
           disabled={readOnly ? false : disabled}
           readOnly={readOnly}
           maxLength={maxLength}

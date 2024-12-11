@@ -1,4 +1,3 @@
-export interface TopicList {
+export type TopicList = {
   label: string;
-}
-[];
+}[];

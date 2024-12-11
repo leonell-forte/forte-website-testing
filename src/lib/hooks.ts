@@ -39,7 +39,7 @@ export const useScreenSize = () => {
 export const useOutsideClick = (
   ref: MutableRefObject<HTMLElement | null>,
 
-  callBack: () => void,
+  callBack: () => void
 ) => {
   const handleClick = useCallback(
     (e: MouseEvent) => {
@@ -48,7 +48,7 @@ export const useOutsideClick = (
       }
     },
 
-    [ref, callBack], // Depend on ref and callBack to ensure stability
+    [ref, callBack] // Depend on ref and callBack to ensure stability
   );
 
   useEffect(() => {

@@ -1,6 +1,7 @@
 import classNames from "classnames";
-import { PartnersContent as Type } from "../../lib/types/components";
+
 import { useResponsivePadding } from "../../lib/hooks";
+import { PartnersContent as Type } from "../../lib/types/components";
 
 const PartnersSection = (props: Type) => {
   const {
@@ -27,18 +28,18 @@ const PartnersSection = (props: Type) => {
 
   return (
     <div style={{ padding }}>
-      <div className="space-y-6 md:space-y-10 main-container">
-        <p className="text-center font-lyon text-[32px] md:text-[66px] leading-[38.4px] md:leading-[79.2px]">
+      <div className="main-container space-y-6 md:space-y-10">
+        <p className="text-center font-lyon text-[32px] leading-[38.4px] md:text-[66px] md:leading-[79.2px]">
           {title}
         </p>
 
-        <div className="w-full overflow-scroll px-5 hide-scroll">
+        <div className="hide-scroll w-full overflow-scroll px-5">
           <div
             className={classNames(
               flex
-                ? "flex gap-12 overflow-scroll hide-scroll"
-                : "grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-5",
-              "w-fit mx-auto",
+                ? "hide-scroll flex gap-12 overflow-scroll"
+                : "grid grid-cols-2 gap-5 md:grid-cols-3 lg:grid-cols-4",
+              "mx-auto w-fit"
             )}
           >
             {partner.map((item, index) => {
@@ -47,16 +48,16 @@ const PartnersSection = (props: Type) => {
                   key={index}
                   className={classNames(
                     flex
-                      ? "h-10 md:h-[55px] flex-shrink-0 py-2"
-                      : "flex-shrink-0 w-[165px] md:w-[216px] lg:w-[315px] h-[80px] md:h-[115px] lg:h-[161px] flex items-center justify-center mx-auto px-6 md:px-11 lg:px-[65px]",
+                      ? "h-10 flex-shrink-0 py-2 md:h-[55px]"
+                      : "mx-auto flex h-[80px] w-[165px] flex-shrink-0 items-center justify-center px-6 md:h-[115px] md:w-[216px] md:px-11 lg:h-[161px] lg:w-[315px] lg:px-[65px]"
                   )}
                 >
                   <img
                     src={item.image.url}
                     alt="partner"
                     className={classNames(
-                      "object-contain h-full max-h-[50px] max-w-[90px] md:max-h-[80px] md:max-w-[150px]",
-                      flex && "!max-w-max !max-h-max",
+                      "h-full max-h-[50px] max-w-[90px] object-contain md:max-h-[80px] md:max-w-[150px]",
+                      flex && "!max-h-max !max-w-max"
                     )}
                   />
                 </div>

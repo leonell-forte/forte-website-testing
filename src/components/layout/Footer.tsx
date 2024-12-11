@@ -1,23 +1,24 @@
 import { Link } from "react-router-dom";
+
 import { IFooter } from "../../lib/types/layout";
 
 const Footer = (props: IFooter) => {
   const { logo, description, links, socials, credits } = props;
 
   return (
-    <div className="space-y-[60px] py-[60px] md:px-20 px-10 bg-dark-green">
-      <div className="gap-y-[60px] grid grid-cols-1 lg:flex lg:gap-[244px] items-start">
-        <div className="flex flex-col gap-[30px] lg:max-w-[426px] w-full">
+    <div className="space-y-[60px] bg-dark-green px-10 py-[60px] md:px-20">
+      <div className="grid grid-cols-1 items-start gap-y-[60px] lg:flex lg:gap-[244px]">
+        <div className="flex w-full flex-col gap-[30px] lg:max-w-[426px]">
           <img
             src={logo.url}
             alt="logo"
-            className="w-[97px] h-[33px] md:w-[139px] md:h-[46px]"
+            className="h-[33px] w-[97px] md:h-[46px] md:w-[139px]"
           />
 
-          <p className="text-[12px] md:text-[18px] font-light">{description}</p>
+          <p className="text-[12px] font-light md:text-[18px]">{description}</p>
         </div>
 
-        <div className="grid grid-cols-2 w-full">
+        <div className="grid w-full grid-cols-2">
           <ul className="flex flex-col gap-5 md:gap-[30px]">
             {links.map((item, index) => {
               const { label, link } = item;
@@ -25,7 +26,7 @@ const Footer = (props: IFooter) => {
                 <Link
                   key={index}
                   to={link}
-                  className="text-[15px] md:text-[18px] font-medium"
+                  className="text-[15px] font-medium md:text-[18px]"
                 >
                   {label}
                 </Link>
@@ -40,7 +41,7 @@ const Footer = (props: IFooter) => {
                 <Link
                   key={index}
                   to={link}
-                  className="text-[15px] md:text-[18px] font-medium"
+                  className="text-[15px] font-medium md:text-[18px]"
                 >
                   {label}
                 </Link>
@@ -50,7 +51,7 @@ const Footer = (props: IFooter) => {
         </div>
       </div>
 
-      <p className="text-[15px] md:text-[18px] text-[#FFFFFFB2]">{credits}</p>
+      <p className="text-[15px] text-[#FFFFFFB2] md:text-[18px]">{credits}</p>
     </div>
   );
 };

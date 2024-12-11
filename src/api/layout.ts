@@ -1,5 +1,5 @@
-import { layoutQuery } from "../lib/queries/layout";
 import { api } from "../lib/axios-config";
+import { layoutQuery } from "../lib/queries/layout";
 import { LayoutType } from "../lib/types/layout";
 
 class LayoutService {

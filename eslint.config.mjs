@@ -1,12 +1,14 @@
-import globals from "globals";
+import { FlatCompat } from "@eslint/eslintrc";
 import pluginJs from "@eslint/js";
 import tseslintPlugin from "@typescript-eslint/eslint-plugin";
 import tseslintParser from "@typescript-eslint/parser";
 import pluginReact from "eslint-plugin-react";
+import globals from "globals";
+
+const compat = new FlatCompat();
 
 export default [
   {
-    extends: ["plugin:prettier/recommended"],
     files: ["**/*.{js,mjs,cjs,ts,jsx,tsx}"],
     languageOptions: {
       globals: {
@@ -29,6 +31,7 @@ export default [
       "no-irregular-whitespace": "off",
       "@typescript-eslint/no-explicit-any": "off",
       "@typescript-eslint/no-empty-object-type": "off",
+      "react/prop-types": "off",
     },
     settings: {
       react: {
@@ -36,4 +39,5 @@ export default [
       },
     },
   },
+  ...compat.extends("plugin:prettier/recommended"),
 ];

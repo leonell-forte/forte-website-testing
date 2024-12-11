@@ -1,6 +1,7 @@
 import { useQuery } from "@tanstack/react-query";
 
 import { fetchData } from "../api/data-fetcher";
+import { useScreenSize } from "../lib/hooks";
 import { individualPageQuery } from "../lib/queries/pages";
 import { IndividualPage, PageCompomnentProps } from "../lib/types/pages";
 import BigCardSection from "./sections/BigCardSection";
@@ -12,7 +13,6 @@ import HeroSection from "./sections/HeroSection";
 import PartnersSection from "./sections/PartnersSection";
 import SmallCardSection from "./sections/SmallCardSection";
 import Contact from "./sections/static/Contact";
-import { useScreenSize } from "../lib/hooks";
 
 const CONTACT_SLUG = "/contact";
 

@@ -1,7 +1,9 @@
-import Button from "../ui/button/button";
-import { useResponsivePadding, useScreenSize } from "../../lib/hooks";
-import { HeroComponentData } from "@/lib/types/components";
 import classNames from "classnames";
+
+import { HeroComponentData } from "@/lib/types/components";
+
+import { useResponsivePadding, useScreenSize } from "../../lib/hooks";
+import Button from "../ui/button/button";
 
 const HeroSection = (props: HeroComponentData) => {
   const {
@@ -53,7 +55,7 @@ const HeroSection = (props: HeroComponentData) => {
     <div
       className={classNames(
         `main-container`,
-        index === 0 ? "pt-[66px] md:pt-[100px]" : "",
+        index === 0 ? "pt-[66px] md:pt-[100px]" : ""
       )}
     >
       <div
@@ -61,32 +63,26 @@ const HeroSection = (props: HeroComponentData) => {
           padding,
         }}
       >
-        <div className="flex flex-col items-center text-center gap-[60px] max-w-[1200px] mx-auto">
+        <div className="mx-auto flex max-w-[1200px] flex-col items-center gap-[60px] text-center">
           <div className="space-y-[30px] md:space-y-[45px]">
-            <p className="text-[40px] md:text-[82px] font-lyon leading-[44px] md:leading-[90.2px]">
+            <p className="font-lyon text-[40px] leading-[44px] md:text-[82px] md:leading-[90.2px]">
               {mainText}
             </p>
 
-            <p className="text-[15px] md:text-[22px] leading-[18px] md:leading-[26.4px]">
+            <p className="text-[15px] leading-[18px] md:text-[22px] md:leading-[26.4px]">
               {secondaryText}
             </p>
 
             <div className="flex justify-center">
-              <Button
-                href={buttonLink}
-                variant="mint"
-              >
+              <Button href={buttonLink} variant="mint">
                 {buttonLabel}
               </Button>
             </div>
           </div>
 
           {renderImage() && (
-            <div className="max-w-[1097px] mx-auto">
-              <img
-                src={renderImage()}
-                alt="mobile"
-              />
+            <div className="mx-auto max-w-[1097px]">
+              <img src={renderImage()} alt="mobile" />
             </div>
           )}
         </div>

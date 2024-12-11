@@ -1,6 +1,6 @@
+import { useResponsivePadding } from "../../../lib/hooks";
 import { CardComponentData } from "../../../lib/types/components";
 import Card from "./Card";
-import { useResponsivePadding } from "../../../lib/hooks";
 
 const CardSection = (props: CardComponentData) => {
   const {
@@ -33,25 +33,20 @@ const CardSection = (props: CardComponentData) => {
         }}
       >
         <div className="space-y-10">
-          <div className="text-center space-y-[30px] px-5">
-            <p className="font-lyon text-[32px] md:text-[66px] leading-[38.4px] md:leading-[79.2px] tracking-[-2%]">
+          <div className="space-y-[30px] px-5 text-center">
+            <p className="font-lyon text-[32px] leading-[38.4px] tracking-[-2%] md:text-[66px] md:leading-[79.2px]">
               {header}
             </p>
 
-            <p className="text-[15px] md:text-[22px] leading-[18px] md:leading-[26.4px] max-w-[348px] md:max-w-[658px] lg:max-w-[792px] mx-auto">
+            <p className="mx-auto max-w-[348px] text-[15px] leading-[18px] md:max-w-[658px] md:text-[22px] md:leading-[26.4px] lg:max-w-[792px]">
               {description}
             </p>
           </div>
 
-          <div className="w-full overflow-scroll px-5 hide-scroll">
-            <div className="flex flex-col lg:flex-row lg:justify-start gap-5 w-fit mx-auto">
+          <div className="hide-scroll w-full overflow-scroll px-5">
+            <div className="mx-auto flex w-fit flex-col gap-5 lg:flex-row lg:justify-start">
               {cards.map((item, index) => {
-                return (
-                  <Card
-                    key={index}
-                    {...item}
-                  />
-                );
+                return <Card key={index} {...item} />;
               })}
             </div>
           </div>
