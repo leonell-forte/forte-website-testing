@@ -17,7 +17,7 @@ const Header = (props: IHeader) => {
   const { pathname } = useLocation();
 
   return (
-    <div className="fixed top-0 w-full z-50">
+    <div className="absolute top-0 w-full z-50">
       <div className="h-[66px] md:h-[100px] flex items-end max-w-[1320px] mx-auto px-5">
         <div className="w-full flex items-center justify-between px-10]">
           <div className="md:w-[200px]">

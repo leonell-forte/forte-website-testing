@@ -74,7 +74,7 @@ export interface Smallcard {
   link: string;
 }
 
-export interface SmallCardContent {
+export interface SmallCardContent extends IPaddings {
   __typename: "SmallCardContentRecord";
 
   title: string;
@@ -92,7 +92,7 @@ export interface BigCard {
   image: Image;
 }
 
-export interface BigCardContent {
+export interface BigCardContent extends IPaddings {
   __typename: "BigCardContentRecord";
 
   title: string;
@@ -106,7 +106,7 @@ export interface Partner {
   image: Image;
 }
 
-export interface PartnersContent {
+export interface PartnersContent extends IPaddings {
   __typename: "PartnersContentRecord";
 
   title: string;
@@ -124,7 +124,7 @@ export interface CarouselItem {
   image: Image;
 }
 
-export interface CarouselContent {
+export interface CarouselContent extends IPaddings {
   __typename: "CarouselContentRecord";
 
   backgroundImage: Image;
@@ -144,7 +144,7 @@ export interface ContentSectionData {
     | CarouselContent[];
 }
 
-export interface CTASectionData {
+export interface CTASectionData extends IPaddings {
   __typename: string;
 
   title: string;

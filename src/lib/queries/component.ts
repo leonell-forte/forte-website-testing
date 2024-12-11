@@ -97,6 +97,12 @@ export const smallCardSectionQuery = `
               
               link
             }
+
+            mobilePadding
+
+            tabletPadding
+
+            desktopPadding
           }
  `;
 
@@ -117,6 +123,12 @@ export const bigCardSectionQuery = `
               
               description
             }
+
+            mobilePadding
+
+            tabletPadding
+
+            desktopPadding
           }
  `;
 
@@ -133,6 +145,12 @@ export const partnersSectionQuery = `
                 url
               }
             }
+
+            mobilePadding
+
+            tabletPadding
+
+            desktopPadding
           }
  `;
 
@@ -153,6 +171,12 @@ export const carouselSectionQuery = `
                 url
               }
             }
+
+            mobilePadding
+
+            tabletPadding
+
+            desktopPadding
           }
  `;
 
@@ -175,5 +199,11 @@ export const ctaSectionQuery = `
       desktopBackground {
         url
       }
+
+      mobilePadding
+
+      tabletPadding
+
+      desktopPadding
     }
  `;
