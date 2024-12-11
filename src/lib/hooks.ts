@@ -75,3 +75,31 @@ export const useEscapeKey = (callback: () => void): void => {
     };
   }, [callback]);
 };
+
+interface IResponsivePadding {
+  mobilePadding: string;
+
+  tabletPadding: string;
+
+  desktopPadding: string;
+}
+
+export const useResponsivePadding = ({
+  mobilePadding,
+
+  tabletPadding,
+
+  desktopPadding,
+}: IResponsivePadding) => {
+  const { isMobile, isDesktop, isTablet } = useScreenSize();
+
+  let padding = "";
+
+  if (isMobile) padding = mobilePadding;
+
+  if (isTablet) padding = tabletPadding;
+
+  if (isDesktop) padding = desktopPadding;
+
+  return { padding };
+};

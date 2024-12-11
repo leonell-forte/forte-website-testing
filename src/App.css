@@ -58,7 +58,7 @@ body {
 }
 
 .main-container {
-  @apply px-5 md:px-[61px] mx-auto;
+  @apply px-5 mx-auto;
   max-width: 1440px;
 }
 

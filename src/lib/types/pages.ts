@@ -25,7 +25,11 @@ export interface Image {
 
 export interface IndividualPage {
   page: {
-    components: any[];
+    containers: {
+      backgroundImage: Image;
+
+      components: any[];
+    }[];
   };
 }
 

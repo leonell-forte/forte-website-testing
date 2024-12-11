@@ -17,6 +17,12 @@ export const heroSectionQuery = `
         desktopImage {
             url
         }
+
+        mobilePadding
+
+        tabletPadding
+
+        desktopPadding
     }
 `;
 
@@ -37,6 +43,12 @@ export const cardSectionQuery = `
                 url
             }
         }
+
+        mobilePadding
+
+        tabletPadding
+
+        desktopPadding
     }
  `;
 
@@ -61,19 +73,17 @@ export const featureSectionQuery = `
                     description
                 }
             }
+
+            mobilePadding
+
+            tabletPadding
+
+            desktopPadding
         }
  `;
 
-export const contentSectionQuery = `
-   ... on ContentSectionRecord {
-        __typename
-
-        backgroundImage {
-          url
-        }
-
-        content {
-          ... on SmallCardContentRecord {
+export const smallCardSectionQuery = `
+  ... on SmallCardSectionRecord {
             __typename
 
             title
@@ -88,8 +98,10 @@ export const contentSectionQuery = `
               link
             }
           }
-            
-          ... on BigCardContentRecord {
+ `;
+
+export const bigCardSectionQuery = `
+   ... on BigCardSectionRecord {
             __typename
 
             title
@@ -106,8 +118,10 @@ export const contentSectionQuery = `
               description
             }
           }
-          
-          ... on PartnersContentRecord {
+ `;
+
+export const partnersSectionQuery = `
+     ... on PartnersSectionRecord {
             __typename
 
             title
@@ -120,8 +134,10 @@ export const contentSectionQuery = `
               }
             }
           }
+ `;
 
-           ... on CarouselContentRecord {
+export const carouselSectionQuery = `
+          ... on CarouselSectionRecord {
             __typename
 
             backgroundImage {
@@ -138,8 +154,6 @@ export const contentSectionQuery = `
               }
             }
           }
-        }
-      }
  `;
 
 export const ctaSectionQuery = `
