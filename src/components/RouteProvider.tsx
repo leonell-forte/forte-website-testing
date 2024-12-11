@@ -1,11 +1,17 @@
-import { BrowserRouter as Router, Route, Routes } from "react-router-dom";
-import Layout from "./layout/Layout";
-import { Suspense } from "react";
 import { useQuery } from "@tanstack/react-query";
+import { Suspense } from "react";
+import { Route, BrowserRouter as Router, Routes } from "react-router-dom";
+
+import { AllPages } from "@/lib/types/pages";
+
 import { fetchData } from "../api/data-fetcher";
 import { pageQuery } from "../lib/queries/pages";
-import { AllPages } from "@/lib/types/pages";
 import PageComponents from "./PageComponents";
+import Layout from "./layout/Layout";
+// static sections
+import Contact from "./sections/static/Contact";
+
+const CONTACT_SLUG = "/contact";
 
 const RouteProvider = () => {
   const { data } = useQuery<AllPages>({
@@ -26,6 +32,7 @@ const RouteProvider = () => {
                   <Route
                     key={index}
                     path={slug}
+                    // element={slug === CONTACT_SLUG ? <Contact id={id} /> : <PageComponents id={id} />}
                     element={<PageComponents id={id} />}
                   />
                 );
