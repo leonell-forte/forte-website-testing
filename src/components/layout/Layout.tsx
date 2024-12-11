@@ -18,9 +18,11 @@ const Layout = ({ children }: ILayout) => {
 
   return (
     <ScrollArea className="h-screen">
-      {!isLoading && <Header {...data!.header!} />}
+      <div className="relative">
+        {!isLoading && <Header {...data!.header!} />}
 
-      <div>{children}</div>
+        {children}
+      </div>
 
       {!isLoading && <Footer {...data!.footer!} />}
     </ScrollArea>
