@@ -59,14 +59,14 @@ const FeatureSection = (props: FeatureSectionData) => {
                     />
                   </div>
 
-                  <div className="flex flex-col md:flex-row">
+                  <div className="flex flex-col lg:flex-row">
                     {points.map((item, index) => {
                       const { description } = item;
 
                       return (
                         <div
                           key={index}
-                          className="border-t py-5 md:py-[30px] flex items-start gap-4"
+                          className="border-t py-5 md:py-[30px] flex items-start gap-4 lg:pr-[92px]"
                         >
                           <img
                             src={dot}

@@ -44,18 +44,19 @@ const SmallCardSection = (props: Type) => {
             return (
               <div
                 key={index}
-                className="relative bg-[#30F1FF1A] backdrop-blur-[69.83px] rounded-[18px] p-5 h-[220px] md:h-[240px] lg:h-[320px] flex flex-col justify-between"
+                className="relative bg-[#30F1FF1A] backdrop-blur-[69.83px] rounded-[18px] p-5 md:p-[30px] h-[220px] md:h-[240px] lg:h-[320px] flex flex-col justify-between"
               >
                 <Link
                   to={link}
-                  className="absolute top-5 right-5"
+                  className="absolute top-[30px] md:top-10 right-5"
                 >
                   <img
                     src={arrow}
                     alt="arrow"
+                    className="w-[19px] md:w-[28px]"
                   />
                 </Link>
-                <p className="text-[27px] md:text-[36px] font-lyon leading-[43.2px] lg:max-w-[331px]">
+                <p className="text-[27px] md:text-[36px] font-lyon leading-[32.4px] md:leading-[43.2px] lg:max-w-[295px]">
                   {title}
                 </p>
 
