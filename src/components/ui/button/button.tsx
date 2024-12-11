@@ -5,12 +5,18 @@ import { IButton, VariantTypes } from "@/lib/types/ui";
 
 import styles from "./styles.module.scss";
 
-const Button = ({ small, variant, href, className, ...props }: IButton) => {
+const Button = ({
+  small,
+  variant = "base",
+  href,
+  className,
+  ...props
+}: IButton) => {
   return href ? (
     <Link
       to={href}
       className={classNames(
-        "flex items-center rounded-[30px] bg-white px-6 font-medium text-black",
+        "flex items-center rounded-[30px] px-6 font-medium text-black",
 
         small ? "h-10" : "h-[50px] text-[18px]",
 
@@ -25,7 +31,7 @@ const Button = ({ small, variant, href, className, ...props }: IButton) => {
     <button
       {...props}
       className={classNames(
-        "rounded-[30px] bg-white px-6 font-medium text-black",
+        "rounded-[30px] px-6 font-medium text-black",
 
         small ? "h-10" : "h-[50px] text-[18px]",
 

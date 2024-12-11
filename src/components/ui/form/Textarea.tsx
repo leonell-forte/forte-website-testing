@@ -11,18 +11,18 @@ type Props = {
   disabled?: boolean;
   maxLength?: number;
   placeholder?: string;
-  type?: "text" | "email";
+  rows?: number;
 } & WrapperProps;
 
-const Input = forwardRef<HTMLInputElement, Props>(function FI(
+const Textarea = forwardRef<HTMLTextAreaElement, Props>(function FTA(
   {
     name,
-    type = "text",
+    label,
     disabled = false,
     readOnly = false,
     maxLength = undefined,
     placeholder = undefined,
-    label,
+    rows = 10,
     ...rest
   },
   ref
@@ -39,14 +39,14 @@ const Input = forwardRef<HTMLInputElement, Props>(function FI(
       error={errorMessage}
       readOnly={readOnly}
       label={label}
+      className="items-start [&>label]:mt-2.5"
     >
       <div className="relative w-full">
-        <input
+        <textarea
           id={name}
           name={name}
-          type={type}
           className={cn(
-            "h-[3.125rem] w-full rounded-lg border bg-transparent p-[1rem] text-sm leading-4 sm:text-base",
+            "min-h-[3.125rem] w-full rounded-lg border bg-transparent p-[1rem] text-sm leading-4 sm:text-base",
             "focus:outline-none disabled:bg-gray-300",
             "[&:not(:disabled)]:read-only:border-none [&:not(:disabled)]:read-only:bg-transparent [&:not(:disabled)]:read-only:px-0 [&:not(:disabled)]:read-only:pt-1.5",
             error
@@ -58,6 +58,7 @@ const Input = forwardRef<HTMLInputElement, Props>(function FI(
           readOnly={readOnly}
           maxLength={maxLength}
           ref={ref}
+          rows={rows}
           {...rest}
         />
       </div>
@@ -65,4 +66,4 @@ const Input = forwardRef<HTMLInputElement, Props>(function FI(
   );
 });
 
-export default Input;
+export default Textarea;

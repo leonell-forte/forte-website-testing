@@ -1,7 +1,5 @@
-"use client";
-
 import * as SelectPrimitive from "@radix-ui/react-select";
-import { Check, ChevronDown, ChevronUp } from "lucide-react";
+import { ChevronDown, ChevronUp } from "lucide-react";
 import * as React from "react";
 import {
   Control,
@@ -11,6 +9,7 @@ import {
   useFormContext,
 } from "react-hook-form";
 
+import { Option } from "../../../lib/types/ui";
 import { cn } from "../../../lib/utilities/cn";
 import FormFieldWrapper, {
   type Props as WrapperProps,
@@ -32,13 +31,14 @@ const SelectTrigger = React.forwardRef<
   <SelectPrimitive.Trigger
     ref={ref}
     className={cn(
-      "bg-background ring-offset-background flex h-[3.125rem] w-full items-center justify-between rounded-lg border p-[1rem] text-sm leading-4",
+      "bg-background ring-offset-background flex h-[3.125rem] w-full items-center justify-between rounded-lg border p-[1rem] text-sm leading-4 sm:text-base",
       "focus:outline-none disabled:bg-gray-300",
       "disabled:cursor-not-allowed disabled:opacity-50 [&>span]:line-clamp-1",
       "[&[data-state=open]>svg]:rotate-180",
+      "[&>span]:text-left [&>span]:text-inherit",
       error
-        ? "border-red-500 text-red-500 [&>span]:text-red-500/70"
-        : "focus:border-selected text-white/70 [&>span]:text-white/70",
+        ? "border-red-400 text-red-400 [&>span]:text-red-400/70"
+        : "focus:border-selected data-[placeholder]:text-white/70",
       className
     )}
     {...props}
@@ -94,7 +94,7 @@ const SelectContent = React.forwardRef<
     <SelectPrimitive.Content
       ref={ref}
       className={cn(
-        "text-popover-foreground relative z-50 max-h-96 min-w-[8rem] overflow-hidden rounded-md border bg-[#BFEBE5] shadow-md data-[state=open]:animate-in data-[state=closed]:animate-out data-[state=closed]:fade-out-0 data-[state=open]:fade-in-0 data-[state=closed]:zoom-out-95 data-[state=open]:zoom-in-95 data-[side=bottom]:slide-in-from-top-2 data-[side=left]:slide-in-from-right-2 data-[side=right]:slide-in-from-left-2 data-[side=top]:slide-in-from-bottom-2",
+        "text-popover-foreground relative z-50 max-h-96 max-w-min overflow-hidden rounded-md border bg-[#BFEBE5] shadow-md data-[state=open]:animate-in data-[state=closed]:animate-out data-[state=closed]:fade-out-0 data-[state=open]:fade-in-0 data-[state=closed]:zoom-out-95 data-[state=open]:zoom-in-95 data-[side=bottom]:slide-in-from-top-2 data-[side=left]:slide-in-from-right-2 data-[side=right]:slide-in-from-left-2 data-[side=top]:slide-in-from-bottom-2 sm:min-w-[8rem] sm:max-w-max",
         position === "popper" &&
           "data-[side=bottom]:translate-y-1 data-[side=left]:-translate-x-1 data-[side=right]:translate-x-1 data-[side=top]:-translate-y-1",
         className
@@ -137,9 +137,9 @@ const SelectItem = React.forwardRef<
   <SelectPrimitive.Item
     ref={ref}
     className={cn(
-      "focus:bg-accent focus:text-accent-foreground relative flex w-full cursor-pointer select-none items-center",
+      "focus:bg-accent focus:text-accent-foreground relative flex w-full cursor-pointer select-none items-center text-sm sm:text-base",
       "rounded-sm p-4 outline-none data-[disabled]:pointer-events-none [&[data-state=checked]]:pointer-events-none",
-      "data-[disabled]:opacity-50 [&>span]:w-full [&>span]:text-black hover:[&>span]:text-red-500 [&[data-state=checked]>span]:text-[#2ca373]",
+      "data-[disabled]:opacity-50 [&>span]:w-full [&>span]:text-black hover:[&>span]:text-black/60 [&[data-state=checked]>span]:text-[#2ca373]",
       className
     )}
     {...props}
@@ -166,6 +166,7 @@ type Props<T extends FieldValues> = {
   control: Control<T>;
   disabled?: boolean;
   placeholder?: string;
+  options: Option[];
 } & WrapperProps;
 
 export default function SelectComp<T extends FieldValues>({
@@ -174,6 +175,7 @@ export default function SelectComp<T extends FieldValues>({
   disabled = false,
   readOnly = false,
   placeholder = undefined,
+  options,
   label,
 }: Props<T>) {
   const {
@@ -194,14 +196,23 @@ export default function SelectComp<T extends FieldValues>({
           control={control}
           name={name}
           render={({ field: { onChange, value } }) => (
-            <Select onValueChange={onChange} defaultValue={value}>
+            <Select
+              onValueChange={onChange}
+              defaultValue={value}
+              disabled={disabled}
+            >
               <SelectTrigger error={errorMessage}>
-                <SelectValue placeholder="Select a verified email to display" />
+                <SelectValue placeholder={placeholder || label} />
               </SelectTrigger>
               <SelectContent>
-                <SelectItem value="1">1</SelectItem>
-                <SelectItem value="2">2</SelectItem>
-                <SelectItem value="3">3</SelectItem>
+                {options.map((item, idx) => (
+                  <SelectItem
+                    key={idx}
+                    value={String(item.value || item.label)}
+                  >
+                    {item.label}
+                  </SelectItem>
+                ))}
               </SelectContent>
             </Select>
           )}

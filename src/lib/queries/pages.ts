@@ -8,6 +8,7 @@ import {
   partnersSectionQuery,
   smallCardSectionQuery,
 } from "./component";
+import { topicListQuery } from "./lists";
 
 export const pageQuery = `
     query {
@@ -32,7 +33,11 @@ export const individualPageQuery = (id: string) => {
 
                 }) {
 
+            title
+
            containers {
+
+        
 
                 backgroundImage {
                     url
@@ -55,6 +60,8 @@ export const individualPageQuery = (id: string) => {
                     ${partnersSectionQuery}
 
                     ${carouselSectionQuery}
+
+                    ${topicListQuery}
 
                 }
 

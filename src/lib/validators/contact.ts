@@ -12,20 +12,23 @@ export const contact = {
 
     topic: "",
 
-    // message: "",
+    message: "",
   },
   schema: z.object({
-    firstName: z.string().min(1, "First name is a required field"),
+    firstName: z.string().min(1, "Your first name is required"),
 
-    lastName: z.string().min(2, "Last name is a required field"),
+    lastName: z.string().min(1, "Your last name is required"),
 
-    email: z.string().email({ message: "Invalid email address" }),
+    email: z
+      .string()
+      .min(1, "Your email is required")
+      .email({ message: "Invalid email address" }),
 
-    phoneNumber: z.string().min(1, "Invalid phone number"),
+    phoneNumber: z.string().min(1, "Your phone number is required"),
 
-    topic: z.string().min(1, "Topic is a required field"),
+    topic: z.string().min(1, "Please select one"),
 
-    // message: z.string().min(1, "Please enter your message"),
+    message: z.string().min(1, "Please enter your message"),
   }),
 };
 

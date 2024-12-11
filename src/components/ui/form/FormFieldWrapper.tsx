@@ -6,6 +6,7 @@ export type Props = {
   readOnly?: boolean;
   label?: string;
   optional?: boolean;
+  className?: string;
 };
 
 const FormFieldWrapper = ({
@@ -14,14 +15,20 @@ const FormFieldWrapper = ({
   children,
   label,
   readOnly,
+  className,
   optional = false,
 }: Props & {
   children: React.ReactNode;
 }) => {
   return (
-    <div className="grid grid-cols-[110px_1fr] items-center">
+    <div
+      className={cn("grid items-center sm:grid-cols-[110px_1fr]", className)}
+    >
       {label ? (
-        <label htmlFor={name} className="mb-5 hidden text-white sm:block">
+        <label
+          htmlFor={name}
+          className="mb-5 hidden text-sm text-white sm:block sm:text-base"
+        >
           {label}
           {optional && !readOnly ? (
             <>
@@ -37,7 +44,7 @@ const FormFieldWrapper = ({
           className={cn(
             "mt-0.5 flex min-h-[1rem] items-center space-x-1 text-xs",
             !error || readOnly ? "invisible" : "",
-            error ? "text-red-500" : ""
+            error ? "text-red-400" : ""
           )}
         >
           {error ? error : ""}

@@ -1,7 +1,8 @@
 import { ButtonHTMLAttributes } from "react";
+
 import { CarouselItem } from "./components";
 
-export type VariantTypes = "mint";
+export type VariantTypes = "mint" | "base";
 
 export interface IButton extends ButtonHTMLAttributes<HTMLButtonElement> {
   small?: boolean;
@@ -18,3 +19,8 @@ export interface ICarousel {
 
   background?: string;
 }
+
+export type Option = {
+  label: string;
+  value?: string | number;
+};
