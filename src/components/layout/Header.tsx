@@ -71,6 +71,7 @@ const Header = (props: IHeader) => {
             </div>
 
             <Button
+              className="px-6"
               href={buttonLink}
               small
             >

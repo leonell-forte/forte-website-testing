@@ -8,11 +8,13 @@ const Button = ({ small, variant, href, ...props }: IButton) => {
     <Link
       to={href}
       className={classNames(
-        "rounded-[30px] px-6 bg-white text-black font-medium flex items-center",
+        "rounded-[30px] px-10 bg-white text-black font-medium flex items-center",
 
         small ? "h-10" : "h-[50px] text-[18px]",
 
         styles[variant as VariantTypes],
+
+        props.className,
       )}
     >
       {props.children}
@@ -21,11 +23,13 @@ const Button = ({ small, variant, href, ...props }: IButton) => {
     <button
       {...props}
       className={classNames(
-        "rounded-[30px] px-6 bg-white text-black font-medium",
+        "rounded-[30px] px-10 bg-white text-black font-medium",
 
         small ? "h-10" : "h-[50px] text-[18px]",
 
         styles[variant as VariantTypes],
+
+        props.className,
       )}
     >
       {props.children}
