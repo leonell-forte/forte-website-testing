@@ -1,4 +1,4 @@
-import { ButtonHTMLAttributes, ReactNode } from "react";
+import { ButtonHTMLAttributes } from "react";
 import { CarouselItem } from "./components";
 
 export type VariantTypes = "mint";

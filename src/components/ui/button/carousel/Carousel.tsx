@@ -121,6 +121,7 @@ const Carousel = (props: ICarousel) => {
         {Array.from({ length: items.length }).map((item, index) => {
           return (
             <div
+              key={index}
               className={classNames(
                 "w-[5px] h-[5px] rounded-full",
                 index === activeIndex

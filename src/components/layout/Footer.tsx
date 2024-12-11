@@ -23,6 +23,7 @@ const Footer = (props: IFooter) => {
               const { label, link } = item;
               return (
                 <Link
+                  key={index}
                   to={link}
                   className="text-[15px] md:text-[18px] font-medium"
                 >
@@ -37,6 +38,7 @@ const Footer = (props: IFooter) => {
               const { label, link } = item;
               return (
                 <Link
+                  key={index}
                   to={link}
                   className="text-[15px] font-medium"
                 >
