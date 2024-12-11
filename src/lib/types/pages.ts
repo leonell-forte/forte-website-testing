@@ -1,3 +1,5 @@
+import { Option } from "./ui";
+
 export interface Page {
   title: "string";
 
@@ -25,6 +27,7 @@ export interface Image {
 
 export interface IndividualPage {
   page: {
+    title?: string;
     containers: {
       backgroundImage: Image;
 
@@ -35,4 +38,10 @@ export interface IndividualPage {
 
 export interface PageCompomnentProps {
   id: string;
+  slug?: string;
 }
+
+export type ContactProps = {
+  title: string;
+  topicList: Option[];
+};

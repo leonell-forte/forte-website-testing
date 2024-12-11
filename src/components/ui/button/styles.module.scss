@@ -1,3 +1,7 @@
+.base {
+  @apply bg-white transition duration-300 hover:bg-sage;
+}
+
 .mint {
   @apply bg-mint;
 }

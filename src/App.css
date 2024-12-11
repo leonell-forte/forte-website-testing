@@ -50,7 +50,7 @@
 }
 
 body {
-  @apply w-screen overflow-x-hidden overflow-y-scroll;
+  @apply w-screen overflow-x-hidden;
 }
 
 .link {

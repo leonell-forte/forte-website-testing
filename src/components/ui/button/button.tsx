@@ -1,9 +1,17 @@
-import { IButton, VariantTypes } from "@/lib/types/ui";
 import classNames from "classnames";
-import styles from "./styles.module.scss";
 import { Link } from "react-router-dom";
 
-const Button = ({ small, variant, href, ...props }: IButton) => {
+import { IButton, VariantTypes } from "@/lib/types/ui";
+
+import styles from "./styles.module.scss";
+
+const Button = ({
+  small,
+  variant = "base",
+  href,
+  className,
+  ...props
+}: IButton) => {
   return href ? (
     <Link
       to={href}
@@ -14,7 +22,7 @@ const Button = ({ small, variant, href, ...props }: IButton) => {
 
         styles[variant as VariantTypes],
 
-        props.className,
+        className
       )}
     >
       {props.children}
@@ -29,7 +37,7 @@ const Button = ({ small, variant, href, ...props }: IButton) => {
 
         styles[variant as VariantTypes],
 
-        props.className,
+        className
       )}
     >
       {props.children}
