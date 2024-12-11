@@ -1,13 +1,14 @@
-import world from "../../assets/images/icons/world.svg";
-import chevron from "../../assets/images/icons/chevron.svg";
-import MobileMenu from "./MobileMenu";
-import menu from "../../assets/images/icons/menu.svg";
-import closedMenu from "../../assets/images/icons/closedMenu.svg";
-import { useState } from "react";
-import Button from "../ui/button/button";
 import classNames from "classnames";
-import { IHeader } from "../../lib/types/layout";
+import { useState } from "react";
 import { Link, useLocation } from "react-router-dom";
+
+import chevron from "../../assets/images/icons/chevron.svg";
+import closedMenu from "../../assets/images/icons/closedMenu.svg";
+import menu from "../../assets/images/icons/menu.svg";
+import world from "../../assets/images/icons/world.svg";
+import { IHeader } from "../../lib/types/layout";
+import Button from "../ui/button/button";
+import MobileMenu from "./MobileMenu";
 
 const Header = (props: IHeader) => {
   const [isOpen, setIsOpen] = useState(false);
@@ -17,33 +18,30 @@ const Header = (props: IHeader) => {
   const { pathname } = useLocation();
 
   return (
-    <div className="absolute w-full z-50">
-      <div className="h-[66px] md:h-[100px] flex items-end max-w-[1320px] mx-auto px-5">
-        <div className="w-full flex items-center justify-between px-10]">
+    <div className="absolute z-50 w-full">
+      <div className="mx-auto flex h-[66px] max-w-[1320px] items-end px-5 md:h-[100px]">
+        <div className="px-10] flex w-full items-center justify-between">
           <div className="md:w-[200px]">
             <img
               src={logo?.url}
               alt="logo"
-              className="w-[60px] h-5 md:w-[75px] md:h-[25px] z-50"
+              className="z-50 h-5 w-[60px] md:h-[25px] md:w-[75px]"
             />
           </div>
 
-          <ul className="h-10 px-4 bg-[#30F1FF1A] md:flex items-center justify-center rounded-[50px] hidden z-20">
+          <ul className="z-20 hidden h-10 items-center justify-center rounded-[50px] bg-[#30F1FF1A] px-4 md:flex">
             {menus?.map((item, index) => {
               const { label, link } = item;
 
               const isSelected = pathname === link;
 
               return (
-                <Link
-                  to={link}
-                  key={index}
-                >
+                <Link to={link} key={index}>
                   <li
                     className={classNames(
-                      "h-[27px] flex items-center justify-center px-5 rounded-[50px] font-medium",
+                      "flex h-[27px] items-center justify-center rounded-[50px] px-5 font-medium",
 
-                      isSelected && "bg-[#FFFFFF33]",
+                      isSelected && "bg-[#FFFFFF33]"
                     )}
                   >
                     {label}
@@ -53,45 +51,29 @@ const Header = (props: IHeader) => {
             })}
           </ul>
 
-          <div className="flex items-center gap-[15px] z-50 md:w-[200px] justify-end">
+          <div className="z-50 flex items-center justify-end gap-[15px] md:w-[200px]">
             <div className="flex items-center gap-2">
-              <img
-                src={world}
-                alt="world"
-              />
+              <img src={world} alt="world" />
 
               <div className="flex items-center gap-1">
                 <p className="text-[11px]">ENG</p>
 
-                <img
-                  src={chevron}
-                  alt="arrow"
-                />
+                <img src={chevron} alt="arrow" />
               </div>
             </div>
 
-            <Button
-              className="px-6"
-              href={buttonLink}
-              small
-            >
+            <Button className="px-6" href={buttonLink} small>
               {buttonLabel}
             </Button>
 
             <button
               onClick={() => setIsOpen((prev) => !prev)}
-              className="md:hidden w-[39px] h-[25px] md:w-[63px] md:h-10 rounded-[30px] bg-[#30F1FF1A] flex items-center justify-center"
+              className="flex h-[25px] w-[39px] items-center justify-center rounded-[30px] bg-[#30F1FF1A] md:hidden md:h-10 md:w-[63px]"
             >
               {isOpen ? (
-                <img
-                  src={closedMenu}
-                  alt="menu"
-                />
+                <img src={closedMenu} alt="menu" />
               ) : (
-                <img
-                  src={menu}
-                  alt="menu"
-                />
+                <img src={menu} alt="menu" />
               )}
             </button>
           </div>
