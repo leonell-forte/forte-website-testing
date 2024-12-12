@@ -1,6 +1,6 @@
-import { FeatureSectionData } from "../../../lib/types/components";
 import dot from "../../../assets/images/icons/dot.svg";
 import { useResponsivePadding } from "../../../lib/hooks";
+import { FeatureSectionData } from "../../../lib/types/components";
 
 const FeatureSection = (props: FeatureSectionData) => {
   const { features, title, mobilePadding, tabletPadding, desktopPadding } =
@@ -22,7 +22,7 @@ const FeatureSection = (props: FeatureSectionData) => {
         }}
       >
         <div className="space-y-5 md:space-y-10">
-          <p className="text-center font-lyon text-[32px] leading-[38.4px] md:text-[66px] md:leading-[66px] lg:leading-[79.2px] tracking-[-2%]">
+          <p className="text-center font-lyon text-[32px] leading-[38.4px] tracking-[-2%] md:text-[66px] md:leading-[66px] lg:leading-[79.2px]">
             {title}
           </p>
 
@@ -33,20 +33,20 @@ const FeatureSection = (props: FeatureSectionData) => {
               return (
                 <div
                   key={index}
-                  className="py-10 px-5 md:py-[60px] md:px-10 bg-[#30F1FF1A] rounded-[9px] space-y-10 md:space-y-[60px]"
+                  className="space-y-10 rounded-[9px] bg-[#30F1FF1A] px-5 py-10 md:space-y-[60px] md:px-10 md:py-[60px]"
                 >
                   <div className="flex flex-col gap-10 md:gap-[60px] lg:flex-row lg:justify-between">
                     <div className="space-y-[30px] lg:max-w-[488px]">
-                      <p className="text-[10px] md:text-[17px] text-mint">
+                      <p className="text-[10px] text-mint md:text-[17px]">
                         {title}
                       </p>
 
                       <div className="space-y-[25px]">
-                        <p className="text-[27px] md:text-[50px] font-lyon leading-[32.4px] md:leading-[60px]">
+                        <p className="font-lyon text-[27px] leading-[32.4px] md:text-[50px] md:leading-[60px]">
                           {headline}
                         </p>
 
-                        <p className="text-[15px] md:text-[22px] leading-[18px] md:leading-[26.4px]">
+                        <p className="text-[15px] leading-[18px] md:text-[22px] md:leading-[26.4px]">
                           {description}
                         </p>
                       </div>
@@ -66,13 +66,9 @@ const FeatureSection = (props: FeatureSectionData) => {
                       return (
                         <div
                           key={index}
-                          className="border-t py-5 md:py-[30px] flex items-start gap-4 lg:pr-[92px]"
+                          className="flex items-start gap-4 border-t py-5 md:py-[30px] lg:pr-[92px]"
                         >
-                          <img
-                            src={dot}
-                            alt="dot"
-                            className=" w-1 h-6"
-                          />
+                          <img src={dot} alt="dot" className="h-6 w-1" />
                           <p className="text-[12px] md:text-[18px]">
                             {description}
                           </p>

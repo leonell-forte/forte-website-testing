@@ -48,19 +48,16 @@ const CTASection = (props: CTASectionData) => {
       >
         <div style={{ padding }}>
           <div className="main-container">
-            <div className="bg-[#30F1FF1A] backdrop-blur-[69.83px] px-[21px] py-[140px] rounded-[9px] md:rounded-[18px] flex flex-col items-center text-center space-y-[30px] md:space-y-[60px]">
+            <div className="flex flex-col items-center space-y-[30px] rounded-[9px] bg-[#30F1FF1A] px-[21px] py-[140px] text-center backdrop-blur-[69.83px] md:space-y-[60px] md:rounded-[18px]">
               <div className="max-w-[702px] space-y-[30px] md:space-y-10">
-                <p className="text-[40px] md:text-[82px] font-lyon leading-[44px] md:leading-[90.2px]">
+                <p className="font-lyon text-[40px] leading-[44px] md:text-[82px] md:leading-[90.2px]">
                   {title}
                 </p>
 
                 <p className="text-[15px] md:text-[22px]">{description}</p>
               </div>
 
-              <Button
-                href={buttonLink}
-                variant="mint"
-              >
+              <Button href={buttonLink} variant="mint">
                 {buttonLabel}
               </Button>
             </div>

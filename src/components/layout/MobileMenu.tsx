@@ -1,6 +1,7 @@
-import { Link } from "react-router-dom";
-import { Menus } from "../../lib/types/layout";
 import { motion } from "framer-motion";
+import { Link } from "react-router-dom";
+
+import { Menus } from "../../lib/types/layout";
 
 interface IProps {
   isOpen?: boolean;
@@ -20,19 +21,15 @@ const MobileMenu = ({ menus, isOpen, handleClick }: IProps) => {
       initial={style}
       animate={style}
       transition={{ type: "spring", duration: 0.2 }}
-      className="px-10 w-screen h-screen bg-dark-green fixed top-0 left-0 z-40 pt-[170px]"
+      className="fixed left-0 top-0 z-40 h-screen w-screen bg-dark-green px-10 pt-[170px]"
     >
       <ul className="border-t">
         {menus?.map((item, index) => {
           const { label, link } = item;
 
           return (
-            <Link
-              key={index}
-              to={link}
-              onClick={handleClick}
-            >
-              <li className="py-[50px] text-[30px] border-b">{label}</li>
+            <Link key={index} to={link} onClick={handleClick}>
+              <li className="border-b py-[50px] text-[30px]">{label}</li>
             </Link>
           );
         })}

@@ -26,25 +26,25 @@ const BigCardSection = (props: Type) => {
 
   return (
     <div style={{ padding }}>
-      <div className="space-y-6 md:space-y-10 main-container">
-        <div className="text-center space-y-[15px] md:space-y-[30px]">
-          <p className="font-lyon text-[32px] md:text-[66px] leading-[38.4px] md:leading-[79.2px] tracking-[-2%]">
+      <div className="main-container space-y-6 md:space-y-10">
+        <div className="space-y-[15px] text-center md:space-y-[30px]">
+          <p className="font-lyon text-[32px] leading-[38.4px] tracking-[-2%] md:text-[66px] md:leading-[79.2px]">
             {title}
           </p>
 
-          <p className="text-[15px] font-medium md:text-[22px] leading-[18px] md:leading-[26.4px] max-w-[886px] mx-auto">
+          <p className="mx-auto max-w-[886px] text-[15px] font-medium leading-[18px] md:text-[22px] md:leading-[26.4px]">
             {description}
           </p>
         </div>
 
-        <div className="grid grid-cols-1 lg:grid-cols-2 gap-5">
+        <div className="grid grid-cols-1 gap-5 lg:grid-cols-2">
           {bigCard.map((item, index) => {
             const { title, description, image } = item;
 
             return (
               <div
                 key={index}
-                className="bg-[#30F1FF1A] rounded-[9px] md:rounded-[18px] overflow-hidden backdrop-blur-[69.83px] p-5 space-y-[30px] md:space-y-[60px] md:py-[60px] md:px-10 lg:px-[60px]"
+                className="space-y-[30px] overflow-hidden rounded-[9px] bg-[#30F1FF1A] p-5 backdrop-blur-[69.83px] md:space-y-[60px] md:rounded-[18px] md:px-10 md:py-[60px] lg:px-[60px]"
               >
                 <img
                   src={image.url}
@@ -57,7 +57,7 @@ const BigCardSection = (props: Type) => {
                     {title}
                   </p>
 
-                  <p className="text-[15px] md:text-[22px] leading-[18px] md:leading-[26.4px]">
+                  <p className="text-[15px] leading-[18px] md:text-[22px] md:leading-[26.4px]">
                     {description}
                   </p>
                 </div>

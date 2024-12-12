@@ -1,7 +1,8 @@
-import { ICarousel } from "../../../../lib/types/ui";
-import chevron from "../../../../assets/images/icons/chevron.svg";
 import classNames from "classnames";
 import { useEffect, useRef, useState } from "react";
+
+import chevron from "../../../../assets/images/icons/chevron.svg";
+import { ICarousel } from "../../../../lib/types/ui";
 
 const Carousel = (props: ICarousel) => {
   const { background, className, items } = props;
@@ -55,18 +56,18 @@ const Carousel = (props: ICarousel) => {
     <div className="relative flex items-center justify-center gap-5 py-6">
       <button
         onClick={handlePrev}
-        className="flex-shrink-0 hidden w-[34px] h-[34px] rounded-full border lg:flex items-center justify-center"
+        className="hidden h-[34px] w-[34px] flex-shrink-0 items-center justify-center rounded-full border lg:flex"
       >
         <img
           src={chevron}
           alt="prev"
-          className="rotate-90 w-4 translate-x-[-1px]"
+          className="w-4 translate-x-[-1px] rotate-90"
         />
       </button>
 
       <div
         ref={carouselRef}
-        className="flex items-center gap-2.5 overflow-scroll snap-x hide-scroll"
+        className="hide-scroll flex snap-x items-center gap-2.5 overflow-scroll"
       >
         {items.map((item, index) => {
           const { mainText, secondaryText, image } = item;
@@ -75,9 +76,9 @@ const Carousel = (props: ICarousel) => {
             <div
               key={index}
               className={classNames(
-                "snap-start flex-shrink-0 w-[95%] md:w-full rounded-[9px] md:rounded-[18px] overflow-hidden px-5 py-[110px] md:py-[170px] text-center flex flex-col items-center justify-center gap-[28px]",
+                "flex w-[95%] flex-shrink-0 snap-start flex-col items-center justify-center gap-[28px] overflow-hidden rounded-[9px] px-5 py-[110px] text-center md:w-full md:rounded-[18px] md:py-[170px]",
 
-                className,
+                className
               )}
               style={{
                 backgroundImage: `url(${background})`,
@@ -87,16 +88,13 @@ const Carousel = (props: ICarousel) => {
                 backgroundPosition: "right",
               }}
             >
-              <p className="font-lyon text-[27px] md:text-[36px] leading-[32.4px] md:leading-[43.2px] lg:max-w-[652px]">
+              <p className="font-lyon text-[27px] leading-[32.4px] md:text-[36px] md:leading-[43.2px] lg:max-w-[652px]">
                 {mainText}
               </p>
 
               <div className="flex items-center gap-[15px]">
-                <div className="px-[3.17px] w-10 h-10 md:w-12 md:h-12 rounded-full bg-[#30F1FF1A] flex items-center justify-center">
-                  <img
-                    src={image.url}
-                    alt="carouse-image"
-                  />
+                <div className="flex h-10 w-10 items-center justify-center rounded-full bg-[#30F1FF1A] px-[3.17px] md:h-12 md:w-12">
+                  <img src={image.url} alt="carouse-image" />
                 </div>
 
                 <p className="text-[10px] md:text-[17px]">{secondaryText}</p>
@@ -108,25 +106,25 @@ const Carousel = (props: ICarousel) => {
 
       <button
         onClick={handleNext}
-        className="flex-shrink-0 hidden w-[34px] h-[34px] rounded-full border lg:flex items-center justify-center"
+        className="hidden h-[34px] w-[34px] flex-shrink-0 items-center justify-center rounded-full border lg:flex"
       >
         <img
           src={chevron}
           alt="prev"
-          className="-rotate-90 w-4 translate-x-[1px]"
+          className="w-4 translate-x-[1px] -rotate-90"
         />
       </button>
 
-      <div className="flex items-center gap-2 absolute bottom-0">
+      <div className="absolute bottom-0 flex items-center gap-2">
         {Array.from({ length: items.length }).map((item, index) => {
           return (
             <div
               key={index}
               className={classNames(
-                "w-[5px] h-[5px] rounded-full",
+                "h-[5px] w-[5px] rounded-full",
                 index === activeIndex
-                  ? "bg-white w-[7px] h-[7px]"
-                  : "bg-[#FFFFFF33]",
+                  ? "h-[7px] w-[7px] bg-white"
+                  : "bg-[#FFFFFF33]"
               )}
             ></div>
           );

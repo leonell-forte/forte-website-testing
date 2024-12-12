@@ -16,7 +16,7 @@ const Button = ({
     <Link
       to={href}
       className={classNames(
-        "rounded-[30px] px-10 bg-white text-black font-medium flex items-center",
+        "flex items-center rounded-[30px] bg-white px-10 font-medium text-black",
 
         small ? "h-10" : "h-[50px] text-[18px]",
 
@@ -31,7 +31,7 @@ const Button = ({
     <button
       {...props}
       className={classNames(
-        "rounded-[30px] px-10 bg-white text-black font-medium",
+        "rounded-[30px] bg-white px-10 font-medium text-black",
 
         small ? "h-10" : "h-[50px] text-[18px]",
 

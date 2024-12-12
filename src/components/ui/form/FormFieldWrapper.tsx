@@ -1,3 +1,5 @@
+import { ReactNode } from "react";
+
 import { cn } from "../../../lib/utilities/cn";
 
 export type Props = {
@@ -18,7 +20,7 @@ const FormFieldWrapper = ({
   className,
   optional = false,
 }: Props & {
-  children: React.ReactNode;
+  children: ReactNode;
 }) => {
   return (
     <div
