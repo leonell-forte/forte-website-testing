@@ -17,7 +17,7 @@ const Layout = ({ children }: ILayout) => {
   console.log(data, "123");
 
   return (
-    <ScrollArea className="h-screen">
+    <ScrollArea>
       <div className="relative">
         {!isLoading && <Header {...data!.header!} />}
 
