@@ -1,5 +1,5 @@
-import { useResponsivePadding } from "../../lib/hooks";
-import { BigCardContent as Type } from "../../lib/types/components";
+import { useResponsivePadding } from "@/lib/hooks";
+import { BigCardContent as Type } from "@/lib/types/components";
 
 const BigCardSection = (props: Type) => {
   const {

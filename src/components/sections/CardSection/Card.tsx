@@ -1,4 +1,4 @@
-import { Card as Cardtype } from "../../../lib/types/components";
+import { Card as Cardtype } from "@/lib/types/components";
 
 const Card = (props: Cardtype) => {
   const { title, description, image } = props;

@@ -1,6 +1,6 @@
-import Button from "../../../components/ui/button/button";
-import { useResponsivePadding, useScreenSize } from "../../../lib/hooks";
-import { CTASectionData } from "../../../lib/types/components";
+import Button from "@/components/ui/button/button";
+import { useResponsivePadding, useScreenSize } from "@/lib/hooks";
+import { CTASectionData } from "@/lib/types/components";
 
 const CTASection = (props: CTASectionData) => {
   const {

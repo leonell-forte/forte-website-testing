@@ -1,6 +1,6 @@
-import dot from "../../../assets/images/icons/dot.svg";
-import { useResponsivePadding } from "../../../lib/hooks";
-import { FeatureSectionData } from "../../../lib/types/components";
+import dot from "@/assets/images/icons/dot.svg";
+import { useResponsivePadding } from "@/lib/hooks";
+import { FeatureSectionData } from "@/lib/types/components";
 
 const FeatureSection = (props: FeatureSectionData) => {
   const { features, title, mobilePadding, tabletPadding, desktopPadding } =

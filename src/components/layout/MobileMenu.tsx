@@ -1,7 +1,7 @@
 import { motion } from "framer-motion";
 import { Link } from "react-router-dom";
 
-import { Menus } from "../../lib/types/layout";
+import { Menus } from "@/lib/types/layout";
 
 interface IProps {
   isOpen?: boolean;

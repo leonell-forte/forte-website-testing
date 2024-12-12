@@ -1,7 +1,8 @@
 import { forwardRef } from "react";
 import { useFormContext } from "react-hook-form";
 
-import { cn } from "../../../lib/utilities/cn";
+import { cn } from "@/lib/utilities/cn";
+
 import FormFieldWrapper, {
   type Props as WrapperProps,
 } from "./FormFieldWrapper";

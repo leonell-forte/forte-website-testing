@@ -1,7 +1,7 @@
 import classNames from "classnames";
 
-import { useResponsivePadding } from "../../lib/hooks";
-import { PartnersContent as Type } from "../../lib/types/components";
+import { useResponsivePadding } from "@/lib/hooks";
+import { PartnersContent as Type } from "@/lib/types/components";
 
 const PartnersSection = (props: Type) => {
   const {

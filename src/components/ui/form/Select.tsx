@@ -9,8 +9,9 @@ import {
   useFormContext,
 } from "react-hook-form";
 
-import { Option } from "../../../lib/types/ui";
-import { cn } from "../../../lib/utilities/cn";
+import { Option } from "@/lib/types/ui";
+import { cn } from "@/lib/utilities/cn";
+
 import FormFieldWrapper, {
   type Props as WrapperProps,
 } from "./FormFieldWrapper";

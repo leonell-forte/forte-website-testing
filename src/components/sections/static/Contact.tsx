@@ -1,11 +1,11 @@
-import Button from "../../../components/ui/button/button";
-import { Form } from "../../../components/ui/form/Form";
-import Input from "../../../components/ui/form/Input";
-import Select from "../../../components/ui/form/Select";
-import Textarea from "../../../components/ui/form/Textarea";
-import { ContactProps } from "../../../lib/types/pages";
-import { useForm } from "../../../lib/utilities/useForm";
-import { IContactForm, contact } from "../../../lib/validators/contact";
+import Button from "@/components/ui/button/button";
+import { Form } from "@/components/ui/form/Form";
+import Input from "@/components/ui/form/Input";
+import Select from "@/components/ui/form/Select";
+import Textarea from "@/components/ui/form/Textarea";
+import { ContactProps } from "@/lib/types/pages";
+import { useForm } from "@/lib/utilities/useForm";
+import { IContactForm, contact } from "@/lib/validators/contact";
 
 const Contact = (props: ContactProps) => {
   const { title, topicList } = props;
