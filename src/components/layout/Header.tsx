@@ -2,11 +2,12 @@ import classNames from "classnames";
 import { useState } from "react";
 import { Link, useLocation } from "react-router-dom";
 
-import chevron from "../../assets/images/icons/chevron.svg";
-import closedMenu from "../../assets/images/icons/closedMenu.svg";
-import menu from "../../assets/images/icons/menu.svg";
-import world from "../../assets/images/icons/world.svg";
-import { IHeader } from "../../lib/types/layout";
+import chevron from "@/assets/images/icons/chevron.svg";
+import closedMenu from "@/assets/images/icons/closedMenu.svg";
+import menu from "@/assets/images/icons/menu.svg";
+import world from "@/assets/images/icons/world.svg";
+import { IHeader } from "@/lib/types/layout";
+
 import Button from "../ui/button/button";
 import MobileMenu from "./MobileMenu";
 

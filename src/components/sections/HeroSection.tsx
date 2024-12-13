@@ -1,8 +1,8 @@
 import classNames from "classnames";
 
+import { useResponsivePadding, useScreenSize } from "@/lib/hooks";
 import { HeroComponentData } from "@/lib/types/components";
 
-import { useResponsivePadding, useScreenSize } from "../../lib/hooks";
 import Button from "../ui/button/button";
 
 const HeroSection = (props: HeroComponentData) => {

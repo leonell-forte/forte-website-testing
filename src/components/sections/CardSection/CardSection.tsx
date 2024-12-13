@@ -1,5 +1,6 @@
-import { useResponsivePadding } from "../../../lib/hooks";
-import { CardComponentData } from "../../../lib/types/components";
+import { useResponsivePadding } from "@/lib/hooks";
+import { CardComponentData } from "@/lib/types/components";
+
 import Card from "./Card";
 
 const CardSection = (props: CardComponentData) => {

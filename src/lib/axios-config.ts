@@ -1,10 +1,12 @@
 import axios from "axios";
 
+const DATOCMS_TOKEN = import.meta.env.VITE_DATOCMS_API_TOKEN;
+
 export const api = axios.create({
   baseURL: "https://graphql.datocms.com",
 
   headers: {
-    Authorization: `Bearer ${process.env.REACT_APP_DATOCMS_API_TOKEN}`,
+    Authorization: `Bearer ${DATOCMS_TOKEN}`,
 
     "Content-Type": "application/json",
 

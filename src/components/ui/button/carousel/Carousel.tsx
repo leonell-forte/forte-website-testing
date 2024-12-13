@@ -1,8 +1,8 @@
 import classNames from "classnames";
 import { useEffect, useRef, useState } from "react";
 
-import chevron from "../../../../assets/images/icons/chevron.svg";
-import { ICarousel } from "../../../../lib/types/ui";
+import chevron from "@/assets/images/icons/chevron.svg";
+import { ICarousel } from "@/lib/types/ui";
 
 const Carousel = (props: ICarousel) => {
   const { background, className, items } = props;

@@ -1,6 +1,6 @@
 import { ReactNode } from "react";
 
-import { cn } from "../../../lib/utilities/cn";
+import { cn } from "@/lib/utilities/cn";
 
 export type Props = {
   name?: string;

@@ -1,6 +1,6 @@
 import { Link } from "react-router-dom";
 
-import { IFooter } from "../../lib/types/layout";
+import { IFooter } from "@/lib/types/layout";
 
 const Footer = (props: IFooter) => {
   const { logo, description, links, socials, credits } = props;

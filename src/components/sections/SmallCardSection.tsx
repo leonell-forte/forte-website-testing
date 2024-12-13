@@ -1,8 +1,8 @@
 import { Link } from "react-router-dom";
 
-import arrow from "../../assets/images/icons/arrow.svg";
-import { useResponsivePadding } from "../../lib/hooks";
-import { SmallCardContent as Type } from "../../lib/types/components";
+import arrow from "@/assets/images/icons/arrow.svg";
+import { useResponsivePadding } from "@/lib/hooks";
+import { SmallCardContent as Type } from "@/lib/types/components";
 
 const SmallCardSection = (props: Type) => {
   const {

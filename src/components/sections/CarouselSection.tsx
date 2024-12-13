@@ -1,5 +1,6 @@
-import { useResponsivePadding } from "../../lib/hooks";
-import { CarouselContent as Type } from "../../lib/types/components";
+import { useResponsivePadding } from "@/lib/hooks";
+import { CarouselContent as Type } from "@/lib/types/components";
+
 import Carousel from "../ui/button/carousel/Carousel";
 
 const CarouselSection = (props: Type) => {
