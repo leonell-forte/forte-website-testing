@@ -49,7 +49,7 @@ const BigCardSection = (props: Type) => {
                 <img
                   src={image.url}
                   alt="card-image"
-                  className="rounded-[12px] md:rounded-[24px]"
+                  className="mx-auto w-full rounded-[12px] md:rounded-[24px] lg:max-h-[400px] lg:max-w-[533px]"
                 />
 
                 <div className="space-y-[15px] md:space-y-[20px]">

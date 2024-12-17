@@ -10,6 +10,7 @@ import CardSection from "./sections/CardSection/CardSection";
 import CarouselSection from "./sections/CarouselSection";
 import FeatureSection from "./sections/FeatureSection/FeatureSection";
 import HeroSection from "./sections/HeroSection";
+import InfiniteCarouselSection from "./sections/InfiniteCarouselSection";
 import PartnersSection from "./sections/PartnersSection";
 import SmallCardSection from "./sections/SmallCardSection";
 import Contact from "./sections/static/Contact";
@@ -75,6 +76,9 @@ const PageComponents = ({ id, slug }: PageCompomnentProps) => {
 
                 case "CarouselSectionRecord":
                   return <CarouselSection key={index} {...item} />;
+
+                case "InfiniteCarouselRecord":
+                  return <InfiniteCarouselSection key={index} {...item} />;
 
                 default:
                   return "";

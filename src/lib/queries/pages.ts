@@ -5,6 +5,7 @@ import {
   ctaSectionQuery,
   featureSectionQuery,
   heroSectionQuery,
+  infiniteCarouselQuery,
   partnersSectionQuery,
   smallCardSectionQuery,
 } from "./component";
@@ -64,6 +65,8 @@ export const individualPageQuery = (id: string) => {
                     ${carouselSectionQuery}
 
                     ${topicListQuery}
+
+                    ${infiniteCarouselQuery}
 
                 }
 

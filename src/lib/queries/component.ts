@@ -207,3 +207,17 @@ export const ctaSectionQuery = `
       desktopPadding
     }
  `;
+
+export const infiniteCarouselQuery = `
+     ... on InfiniteCarouselRecord {
+          __typename
+          
+          title
+          
+          partner {
+            image {
+              url
+            }
+          }  
+      }   
+ `;
