@@ -116,6 +116,14 @@ export interface PartnersContent extends IPaddings {
   partner: Partner[];
 }
 
+export interface InfiniteCarouselContent {
+  __typename: "InfiniteCarouselRecord";
+
+  title: string;
+
+  partner: Partner[];
+}
+
 export interface CarouselItem {
   mainText: string;
 

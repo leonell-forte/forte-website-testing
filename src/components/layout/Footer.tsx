@@ -6,7 +6,7 @@ const Footer = (props: IFooter) => {
   const { logo, description, links, socials, credits } = props;
 
   return (
-    <div className="space-y-[60px] bg-dark-green px-10 py-[60px] md:px-20">
+    <div className="space-y-[60px] bg-dark-green px-[40px] py-[60px] sm:px-[80px] sm:py-[100px] md:px-[120px] md:py-[120px]">
       <div className="grid grid-cols-1 items-start gap-y-[60px] lg:flex lg:gap-[244px]">
         <div className="flex w-full flex-col gap-[30px] lg:max-w-[426px]">
           <img

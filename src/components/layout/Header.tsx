@@ -21,7 +21,7 @@ const Header = (props: IHeader) => {
   return (
     <div className="absolute z-50 w-full">
       <div className="mx-auto flex h-[66px] max-w-[1320px] items-end px-5 md:h-[100px]">
-        <div className="px-10] flex w-full items-center justify-between">
+        <div className="flex w-full items-center justify-between px-[20px]">
           <div className="md:w-[200px]">
             <img
               src={logo?.url}
