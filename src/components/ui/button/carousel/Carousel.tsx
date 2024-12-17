@@ -76,8 +76,7 @@ const Carousel = (props: ICarousel) => {
             <div
               key={index}
               className={classNames(
-                "flex w-[95%] flex-shrink-0 snap-start flex-col items-center justify-center gap-[28px] overflow-hidden rounded-[9px] px-5 py-[110px] text-center md:w-full md:rounded-[18px] md:py-[170px]",
-
+                "flex h-[20rem] w-[95%] flex-shrink-0 snap-start flex-col items-center justify-center gap-[28px] overflow-hidden rounded-[9px] px-5 text-center sm:h-[25rem] md:h-[30rem] md:w-full md:rounded-[18px]",
                 className
               )}
               style={{
