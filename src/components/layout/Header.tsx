@@ -2,14 +2,13 @@ import classNames from "classnames";
 import { useState } from "react";
 import { Link, useLocation } from "react-router-dom";
 
-import chevron from "@/assets/images/icons/chevron.svg";
 import closedMenu from "@/assets/images/icons/closedMenu.svg";
 import menu from "@/assets/images/icons/menu.svg";
-import world from "@/assets/images/icons/world.svg";
 import { IHeader } from "@/lib/types/layout";
 
 import Button from "../ui/button/button";
 import MobileMenu from "./MobileMenu";
+import TranslateDropdown from "./TranslateDropdown";
 
 const Header = (props: IHeader) => {
   const [isOpen, setIsOpen] = useState(false);
@@ -53,15 +52,7 @@ const Header = (props: IHeader) => {
           </ul>
 
           <div className="z-50 flex items-center justify-end gap-[15px] md:w-[200px]">
-            <div className="flex items-center gap-2">
-              <img src={world} alt="world" />
-
-              <div className="flex items-center gap-1">
-                <p className="text-[11px]">ENG</p>
-
-                <img src={chevron} alt="arrow" />
-              </div>
-            </div>
+            <TranslateDropdown />
 
             <Button className="px-6" href={buttonLink} small>
               {buttonLabel}
