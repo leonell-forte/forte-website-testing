@@ -76,12 +76,12 @@ const HeroSection = (props: HeroComponentData) => {
             </p>
 
             <p className="text-[15px] leading-[18px] md:text-[22px] md:leading-[26.4px]">
-              {secondaryText}
+              {secondaryText[translation]}
             </p>
 
             <div className="flex justify-center">
               <Button href={buttonLink} variant="mint">
-                {buttonLabel}
+                {buttonLabel[translation]}
               </Button>
             </div>
           </div>

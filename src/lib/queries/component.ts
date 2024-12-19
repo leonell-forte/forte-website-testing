@@ -8,9 +8,17 @@ export const heroSectionQuery = `
           es
         }
 
-        secondaryText
+        secondaryText {
+          en
 
-        buttonLabel
+          es
+        }
+
+        buttonLabel {
+          en
+
+          es
+        }
 
         buttonLink
 

@@ -17,13 +17,13 @@ export interface ITranslation {
 export interface HeroComponentData extends IPaddings {
   __typename: ComponentRecords;
 
-  buttonLabel: string;
+  buttonLabel: ITranslation;
 
   buttonLink: string;
 
   mainText: ITranslation;
 
-  secondaryText: string;
+  secondaryText: ITranslation;
 
   mobileImage: Image;
 
