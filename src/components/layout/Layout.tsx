@@ -15,8 +15,6 @@ const Layout = ({ children }: ILayout) => {
     queryFn: () => fetchData(layoutQuery),
   });
 
-  console.log(data, "123");
-
   return (
     <ScrollArea>
       <div className="relative">

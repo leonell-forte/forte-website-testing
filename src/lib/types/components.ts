@@ -8,6 +8,12 @@ export interface IPaddings {
   desktopPadding: string;
 }
 
+export interface ITranslation {
+  en: string;
+
+  es: string;
+}
+
 export interface HeroComponentData extends IPaddings {
   __typename: ComponentRecords;
 
@@ -15,7 +21,7 @@ export interface HeroComponentData extends IPaddings {
 
   buttonLink: string;
 
-  mainText: string;
+  mainText: ITranslation;
 
   secondaryText: string;
 

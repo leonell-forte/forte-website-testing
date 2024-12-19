@@ -1,6 +1,10 @@
 import classNames from "classnames";
 
-import { useResponsivePadding, useScreenSize } from "@/lib/hooks";
+import {
+  useResponsivePadding,
+  useScreenSize,
+  useTranslation,
+} from "@/lib/hooks";
 import { HeroComponentData } from "@/lib/types/components";
 
 import Button from "../ui/button/button";
@@ -29,6 +33,8 @@ const HeroSection = (props: HeroComponentData) => {
   } = props;
 
   const { isMobile } = useScreenSize();
+
+  const { translation } = useTranslation();
 
   const renderImage = () => {
     switch (isMobile) {
@@ -66,7 +72,7 @@ const HeroSection = (props: HeroComponentData) => {
         <div className="mx-auto flex max-w-[1200px] flex-col items-center gap-[60px] text-center">
           <div className="space-y-[30px] md:space-y-[45px]">
             <p className="font-lyon text-[40px] leading-[44px] md:text-[82px] md:leading-[90.2px]">
-              {mainText}
+              {mainText[translation]}
             </p>
 
             <p className="text-[15px] leading-[18px] md:text-[22px] md:leading-[26.4px]">

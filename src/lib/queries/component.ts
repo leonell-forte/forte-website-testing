@@ -2,7 +2,11 @@ export const heroSectionQuery = `
     ... on HeroSectionRecord {
         __typename
 
-        mainText
+        mainText {
+          en
+
+          es
+        }
 
         secondaryText
 

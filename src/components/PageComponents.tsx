@@ -26,8 +26,6 @@ const PageComponents = ({ id, slug }: PageCompomnentProps) => {
 
   const { isMobile } = useScreenSize();
 
-  console.log(data);
-
   const renderComponents = () => {
     return data?.page.containers.map((item, index) => {
       const { mobileBackgroundImage, desktopBackgroundImage } = item;
