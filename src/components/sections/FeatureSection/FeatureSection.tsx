@@ -1,4 +1,5 @@
 import dot from "@/assets/images/icons/dot.svg";
+import SectionContainer from "@/components/ui/section-container/SectionContainer";
 import { useResponsivePadding, useTranslation } from "@/lib/hooks";
 import { FeatureSectionData } from "@/lib/types/components";
 
@@ -23,7 +24,7 @@ const FeatureSection = (props: FeatureSectionData) => {
           padding,
         }}
       >
-        <div className="space-y-5 md:space-y-10">
+        <SectionContainer>
           <p className="text-center font-lyon text-[32px] leading-[38.4px] tracking-[-2%] md:text-[66px] md:leading-[66px] lg:leading-[79.2px]">
             {title[translation]}
           </p>
@@ -82,7 +83,7 @@ const FeatureSection = (props: FeatureSectionData) => {
               );
             })}
           </div>
-        </div>
+        </SectionContainer>
       </div>
     </div>
   );

@@ -22,13 +22,13 @@ const Header = (props: IHeader) => {
 
   return (
     <div className="absolute z-50 w-full">
-      <div className="mx-auto flex h-[66px] max-w-[1320px] items-end px-5 md:h-[100px]">
-        <div className="flex w-full items-center justify-between px-[20px]">
+      <div className="mx-auto flex h-[66px] max-w-[1320px] items-end px-1.5 md:h-[100px] md:px-5">
+        <div className="flex w-full items-center justify-between sm:px-[5px] md:px-[20px]">
           <div className="md:w-[200px]">
             <img
               src={logo?.url}
               alt="logo"
-              className="z-50 h-5 w-[60px] md:h-[25px] md:w-[75px]"
+              className="z-50 ml-2.5 h-5 w-[60px] md:ml-0 md:h-[25px] md:w-[75px]"
             />
           </div>
 

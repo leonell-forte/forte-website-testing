@@ -4,6 +4,8 @@ import arrow from "@/assets/images/icons/arrow.svg";
 import { useResponsivePadding, useTranslation } from "@/lib/hooks";
 import { SmallCardContent as Type } from "@/lib/types/components";
 
+import SectionContainer from "../ui/section-container/SectionContainer";
+
 const SmallCardSection = (props: Type) => {
   const {
     title,
@@ -31,7 +33,7 @@ const SmallCardSection = (props: Type) => {
 
   return (
     <div style={{ padding }}>
-      <div className="main-container space-y-6 md:space-y-10">
+      <SectionContainer className="main-container">
         <div className="space-y-[15px] text-center md:space-y-[30px]">
           <p className="font-lyon text-[32px] leading-[38.4px] tracking-[-2%] md:text-[66px] md:leading-[79.2px]">
             {title[translation]}
@@ -72,7 +74,7 @@ const SmallCardSection = (props: Type) => {
             );
           })}
         </div>
-      </div>
+      </SectionContainer>
     </div>
   );
 };

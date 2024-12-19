@@ -1,3 +1,4 @@
+import SectionContainer from "@/components/ui/section-container/SectionContainer";
 import { useResponsivePadding, useTranslation } from "@/lib/hooks";
 import { CardComponentData } from "@/lib/types/components";
 
@@ -35,7 +36,7 @@ const CardSection = (props: CardComponentData) => {
           padding,
         }}
       >
-        <div className="space-y-10">
+        <SectionContainer>
           <div className="space-y-[30px] px-5 text-center">
             <p className="font-lyon text-[32px] leading-[38.4px] tracking-[-2%] md:text-[66px] md:leading-[79.2px]">
               {header[translation]}
@@ -47,13 +48,13 @@ const CardSection = (props: CardComponentData) => {
           </div>
 
           <div className="hide-scroll w-full overflow-scroll px-5">
-            <div className="mx-auto flex w-fit flex-col gap-5 lg:flex-row lg:justify-start">
+            <div className="mx-auto flex w-fit flex-col flex-wrap gap-5 lg:flex-row lg:justify-center">
               {cards.map((item, index) => {
                 return <Card key={index} {...item} />;
               })}
             </div>
           </div>
-        </div>
+        </SectionContainer>
       </div>
     </div>
   );

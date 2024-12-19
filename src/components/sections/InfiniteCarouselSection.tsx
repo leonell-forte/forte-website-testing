@@ -58,7 +58,7 @@ export default function InfiniteCarouselSection({ title, partner }: Type) {
 
   return (
     <div className="space-y-[60px] py-[60px] sm:py-[100px] md:space-y-[60px] md:py-[150px]">
-      <p className="text-center font-lyon text-[32px] leading-[38.4px] md:text-[66px] md:leading-[79.2px]">
+      <p className="text-center font-lyon text-[32px] leading-[38.4px] md:text-[50px] md:leading-[60px]">
         {title[translation]}
       </p>
       <div className="w-full overflow-hidden">
