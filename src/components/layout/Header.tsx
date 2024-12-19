@@ -4,6 +4,7 @@ import { Link, useLocation } from "react-router-dom";
 
 import closedMenu from "@/assets/images/icons/closedMenu.svg";
 import menu from "@/assets/images/icons/menu.svg";
+import { useTranslation } from "@/lib/hooks";
 import { IHeader } from "@/lib/types/layout";
 
 import Button from "../ui/button/button";
@@ -16,6 +17,8 @@ const Header = (props: IHeader) => {
   const { logo, menu: menus, buttonLabel, buttonLink } = props;
 
   const { pathname } = useLocation();
+
+  const { translation } = useTranslation();
 
   return (
     <div className="absolute z-50 w-full">
@@ -44,7 +47,7 @@ const Header = (props: IHeader) => {
                       isSelected && "bg-[#FFFFFF33]"
                     )}
                   >
-                    {label}
+                    {label[translation]}
                   </li>
                 </Link>
               );
@@ -55,7 +58,7 @@ const Header = (props: IHeader) => {
             <TranslateDropdown />
 
             <Button className="px-6" href={buttonLink} small>
-              {buttonLabel}
+              {buttonLabel[translation]}
             </Button>
 
             <button

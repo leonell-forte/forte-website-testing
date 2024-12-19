@@ -1,25 +1,26 @@
 import { ReactNode } from "react";
 
+import { ITranslation } from "./components";
 import { Image } from "./pages";
 
 export interface ILayout {
   children?: ReactNode | string;
 }
 
-export type Menus = { label: string; link: string };
+export type Menus = { label: ITranslation; link: string };
 
 export interface IHeader {
   logo: Image;
 
   menu: Menus[];
 
-  buttonLabel: string;
+  buttonLabel: ITranslation;
 
   buttonLink: string;
 }
 
 export interface Link {
-  label: string;
+  label: ITranslation;
 
   link: string;
 }
@@ -27,13 +28,13 @@ export interface Link {
 export interface IFooter {
   logo: Image;
 
-  description: string;
+  description: ITranslation;
 
   links: Link[];
 
   socials: Link[];
 
-  credits: string;
+  credits: ITranslation;
 }
 
 export type LayoutType = {
