@@ -1,6 +1,6 @@
 import classNames from "classnames";
 
-import { useResponsivePadding } from "@/lib/hooks";
+import { useResponsivePadding, useTranslation } from "@/lib/hooks";
 import { PartnersContent as Type } from "@/lib/types/components";
 
 const PartnersSection = (props: Type) => {
@@ -26,11 +26,13 @@ const PartnersSection = (props: Type) => {
     desktopPadding,
   });
 
+  const { translation } = useTranslation();
+
   return (
     <div style={{ padding }}>
       <div className="main-container space-y-6 md:space-y-10">
         <p className="text-center font-lyon text-[32px] leading-[38.4px] md:text-[66px] md:leading-[79.2px]">
-          {title}
+          {title[translation]}
         </p>
 
         <div className="hide-scroll w-full overflow-scroll px-5">

@@ -1,7 +1,8 @@
+import { ITranslation } from "./components";
 import { Option } from "./ui";
 
 export interface Page {
-  title: "string";
+  title: ITranslation;
 
   slug: string;
 
@@ -27,7 +28,7 @@ export interface Image {
 
 export interface IndividualPage {
   page: {
-    title?: string;
+    title: ITranslation;
     containers: {
       mobileBackgroundImage: Image;
 

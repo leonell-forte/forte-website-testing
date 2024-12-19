@@ -33,9 +33,9 @@ export interface HeroComponentData extends IPaddings {
 }
 
 export interface Card {
-  title: string;
+  title: ITranslation;
 
-  description: string;
+  description: ITranslation;
 
   image: Image;
 }
@@ -43,39 +43,39 @@ export interface Card {
 export interface CardComponentData extends IPaddings {
   __typename: ComponentRecords;
 
-  header: string;
+  header: ITranslation;
 
-  description: string;
+  description: ITranslation;
 
   cards: Card[];
 }
 
 export interface Feature {
-  title: string;
+  title: ITranslation;
 
-  headline: string;
+  headline: ITranslation;
 
-  description: string;
+  description: ITranslation;
 
   image: Image;
 
   points: {
-    description: string;
+    description: ITranslation;
   }[];
 }
 
 export interface FeatureSectionData extends IPaddings {
   __typename: ComponentRecords;
 
-  title: string;
+  title: ITranslation;
 
   features: Feature[];
 }
 
 export interface Smallcard {
-  title: string;
+  title: ITranslation;
 
-  description: string;
+  description: ITranslation;
 
   link: string;
 }
@@ -83,17 +83,17 @@ export interface Smallcard {
 export interface SmallCardContent extends IPaddings {
   __typename: "SmallCardContentRecord";
 
-  title: string;
+  title: ITranslation;
 
-  description: string;
+  description: ITranslation;
 
   smallCards: Smallcard[];
 }
 
 export interface BigCard {
-  title: string;
+  title: ITranslation;
 
-  description: string;
+  description: ITranslation;
 
   image: Image;
 }
@@ -101,9 +101,9 @@ export interface BigCard {
 export interface BigCardContent extends IPaddings {
   __typename: "BigCardContentRecord";
 
-  title: string;
+  title: ITranslation;
 
-  description: string;
+  description: ITranslation;
 
   bigCard: BigCard[];
 }
@@ -115,7 +115,7 @@ export interface Partner {
 export interface PartnersContent extends IPaddings {
   __typename: "PartnersContentRecord";
 
-  title: string;
+  title: ITranslation;
 
   flex: boolean;
 
@@ -125,13 +125,13 @@ export interface PartnersContent extends IPaddings {
 export interface InfiniteCarouselContent {
   __typename: "InfiniteCarouselRecord";
 
-  title: string;
+  title: ITranslation;
 
   partner: Partner[];
 }
 
 export interface CarouselItem {
-  mainText: string;
+  mainText: ITranslation;
 
   secondaryText: string;
 
@@ -161,13 +161,13 @@ export interface ContentSectionData {
 export interface CTASectionData extends IPaddings {
   __typename: string;
 
-  title: string;
+  title: ITranslation;
 
-  description: string;
+  description: ITranslation;
 
   buttonLink: string;
 
-  buttonLabel: string;
+  buttonLabel: ITranslation;
 
   mobileBackground: Image;
 

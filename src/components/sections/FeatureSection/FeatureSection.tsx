@@ -1,5 +1,5 @@
 import dot from "@/assets/images/icons/dot.svg";
-import { useResponsivePadding } from "@/lib/hooks";
+import { useResponsivePadding, useTranslation } from "@/lib/hooks";
 import { FeatureSectionData } from "@/lib/types/components";
 
 const FeatureSection = (props: FeatureSectionData) => {
@@ -14,6 +14,8 @@ const FeatureSection = (props: FeatureSectionData) => {
     desktopPadding,
   });
 
+  const { translation } = useTranslation();
+
   return (
     <div className="main-container">
       <div
@@ -23,7 +25,7 @@ const FeatureSection = (props: FeatureSectionData) => {
       >
         <div className="space-y-5 md:space-y-10">
           <p className="text-center font-lyon text-[32px] leading-[38.4px] tracking-[-2%] md:text-[66px] md:leading-[66px] lg:leading-[79.2px]">
-            {title}
+            {title[translation]}
           </p>
 
           <div className="space-y-5 md:space-y-[30px]">
@@ -38,16 +40,16 @@ const FeatureSection = (props: FeatureSectionData) => {
                   <div className="flex flex-col gap-10 md:gap-[60px] lg:flex-row lg:justify-between">
                     <div className="space-y-[30px] lg:max-w-[488px]">
                       <p className="text-[10px] text-mint md:text-[17px]">
-                        {title}
+                        {title[translation]}
                       </p>
 
                       <div className="space-y-[25px]">
                         <p className="font-lyon text-[27px] leading-[32.4px] md:text-[50px] md:leading-[60px]">
-                          {headline}
+                          {headline[translation]}
                         </p>
 
                         <p className="text-[15px] leading-[18px] md:text-[22px] md:leading-[26.4px]">
-                          {description}
+                          {description[translation]}
                         </p>
                       </div>
                     </div>
@@ -70,7 +72,7 @@ const FeatureSection = (props: FeatureSectionData) => {
                         >
                           <img src={dot} alt="dot" className="h-6 w-1" />
                           <p className="text-[12px] md:text-[18px]">
-                            {description}
+                            {description[translation]}
                           </p>
                         </div>
                       );

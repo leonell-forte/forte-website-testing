@@ -16,7 +16,11 @@ export const pageQuery = `
         allPages {
             id
             
-            title
+            title {
+                en
+
+                es
+            }
             
             slug
 
@@ -34,7 +38,11 @@ export const individualPageQuery = (id: string) => {
 
                 }) {
 
-            title
+            title {
+                en
+
+                es
+            }
 
            containers {
 

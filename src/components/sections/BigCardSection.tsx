@@ -1,4 +1,4 @@
-import { useResponsivePadding } from "@/lib/hooks";
+import { useResponsivePadding, useTranslation } from "@/lib/hooks";
 import { BigCardContent as Type } from "@/lib/types/components";
 
 const BigCardSection = (props: Type) => {
@@ -24,16 +24,18 @@ const BigCardSection = (props: Type) => {
     desktopPadding,
   });
 
+  const { translation } = useTranslation();
+
   return (
     <div style={{ padding }}>
       <div className="main-container space-y-6 md:space-y-10">
         <div className="space-y-[15px] text-center md:space-y-[30px]">
           <p className="font-lyon text-[32px] leading-[38.4px] tracking-[-2%] md:text-[66px] md:leading-[79.2px]">
-            {title}
+            {title[translation]}
           </p>
 
           <p className="mx-auto max-w-[886px] text-[15px] font-medium leading-[18px] md:text-[22px] md:leading-[26.4px]">
-            {description}
+            {description[translation]}
           </p>
         </div>
 
@@ -54,11 +56,11 @@ const BigCardSection = (props: Type) => {
 
                 <div className="space-y-[15px] md:space-y-[20px]">
                   <p className="font-lyon text-[27px] md:text-[50px]">
-                    {title}
+                    {title[translation]}
                   </p>
 
                   <p className="text-[15px] leading-[18px] md:text-[22px] md:leading-[26.4px]">
-                    {description}
+                    {description[translation]}
                   </p>
                 </div>
               </div>

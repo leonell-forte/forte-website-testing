@@ -1,7 +1,7 @@
 import { useQuery } from "@tanstack/react-query";
 
 import { fetchData } from "../api/data-fetcher";
-import { useScreenSize } from "../lib/hooks";
+import { useScreenSize, useTranslation } from "../lib/hooks";
 import { individualPageQuery } from "../lib/queries/pages";
 import { IndividualPage, PageCompomnentProps } from "../lib/types/pages";
 import BigCardSection from "./sections/BigCardSection";
@@ -26,6 +26,8 @@ const PageComponents = ({ id, slug }: PageCompomnentProps) => {
 
   const { isMobile } = useScreenSize();
 
+  const { translation } = useTranslation();
+
   const renderComponents = () => {
     return data?.page.containers.map((item, index) => {
       const { mobileBackgroundImage, desktopBackgroundImage } = item;
@@ -45,7 +47,10 @@ const PageComponents = ({ id, slug }: PageCompomnentProps) => {
           }}
         >
           {slug === CONTACT_SLUG ? (
-            <Contact title={data?.page?.title} {...item.components?.[0]} />
+            <Contact
+              title={data?.page?.title[translation]}
+              {...item.components?.[0]}
+            />
           ) : (
             item.components.map((item, index) => {
               const { __typename } = item;

@@ -2,6 +2,7 @@ import classNames from "classnames";
 import { motion, useAnimationFrame } from "framer-motion";
 import { useEffect, useRef, useState } from "react";
 
+import { useTranslation } from "@/lib/hooks";
 import { InfiniteCarouselContent as Type } from "@/lib/types/components";
 
 interface CarouselItem {
@@ -53,10 +54,12 @@ export default function InfiniteCarouselSection({ title, partner }: Type) {
     containerRef.current.style.transform = `translateX(${xPos.current}px)`;
   });
 
+  const { translation } = useTranslation();
+
   return (
     <div className="space-y-[60px] py-[60px] sm:py-[100px] md:space-y-[60px] md:py-[150px]">
       <p className="text-center font-lyon text-[32px] leading-[38.4px] md:text-[66px] md:leading-[79.2px]">
-        {title}
+        {title[translation]}
       </p>
       <div className="w-full overflow-hidden">
         <motion.div
