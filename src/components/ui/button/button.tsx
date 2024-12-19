@@ -16,7 +16,7 @@ const Button = ({
     <Link
       to={href}
       className={classNames(
-        "flex items-center rounded-[30px] bg-white px-10 font-medium text-black",
+        "flex scale-75 items-center rounded-[30px] bg-white px-10 font-medium text-black md:scale-100",
 
         small ? "h-10" : "h-[50px] text-[18px]",
 
