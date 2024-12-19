@@ -3,7 +3,6 @@ import {
   useCallback,
   useContext,
   useEffect,
-  useMemo,
   useState,
 } from "react";
 
@@ -11,8 +10,6 @@ import {
   TranslationContext,
   TranslationContextType,
 } from "@/components/TranslationProvider";
-
-import { Languages } from "./types/languages";
 
 const BREAKPOINTS = {
   mobile: 768, // Anything less than 768px is considered mobile

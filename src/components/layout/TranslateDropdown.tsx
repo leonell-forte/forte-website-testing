@@ -1,4 +1,4 @@
-import { useEffect, useMemo, useRef, useState } from "react";
+import { useRef, useState } from "react";
 
 import chevron from "@/assets/images/icons/chevron.svg";
 import world from "@/assets/images/icons/world.svg";
