@@ -1,9 +1,12 @@
 import { Link } from "react-router-dom";
 
+import { useTranslation } from "@/lib/hooks";
 import { IFooter } from "@/lib/types/layout";
 
 const Footer = (props: IFooter) => {
   const { logo, description, links, socials, credits } = props;
+
+  const { translation } = useTranslation();
 
   return (
     <div className="space-y-[60px] bg-dark-green px-[40px] py-[60px] sm:px-[80px] sm:py-[100px] md:space-y-[100px] md:px-[120px] md:py-[120px]">
@@ -16,7 +19,7 @@ const Footer = (props: IFooter) => {
           />
 
           <p className="text-[12px] font-light leading-[14.4px] md:text-[18px] md:leading-[21.6px]">
-            {description}
+            {description[translation]}
           </p>
         </div>
 
@@ -30,7 +33,7 @@ const Footer = (props: IFooter) => {
                   to={link}
                   className="text-[15px] font-medium md:text-[18px]"
                 >
-                  {label}
+                  {label[translation]}
                 </Link>
               );
             })}
@@ -45,7 +48,7 @@ const Footer = (props: IFooter) => {
                   to={link}
                   className="text-[15px] font-medium md:text-[18px]"
                 >
-                  {label}
+                  {label[translation]}
                 </Link>
               );
             })}
@@ -53,7 +56,9 @@ const Footer = (props: IFooter) => {
         </div>
       </div>
 
-      <p className="text-[15px] text-[#FFFFFFB2] md:text-[18px]">{credits}</p>
+      <p className="text-[15px] text-[#FFFFFFB2] md:text-[18px]">
+        {credits[translation]}
+      </p>
     </div>
   );
 };

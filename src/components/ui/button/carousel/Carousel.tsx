@@ -2,6 +2,7 @@ import classNames from "classnames";
 import { useEffect, useRef, useState } from "react";
 
 import chevron from "@/assets/images/icons/chevron.svg";
+import { useTranslation } from "@/lib/hooks";
 import { ICarousel } from "@/lib/types/ui";
 
 const Carousel = (props: ICarousel) => {
@@ -52,6 +53,8 @@ const Carousel = (props: ICarousel) => {
     };
   }, []);
 
+  const { translation } = useTranslation();
+
   return (
     <div className="relative flex items-center justify-center gap-5 py-6">
       <button
@@ -88,7 +91,7 @@ const Carousel = (props: ICarousel) => {
               }}
             >
               <p className="font-lyon text-[27px] leading-[32.4px] md:text-[36px] md:leading-[43.2px] lg:max-w-[652px]">
-                {mainText}
+                {mainText[translation]}
               </p>
 
               <div className="flex items-center gap-[15px]">

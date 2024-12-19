@@ -1,7 +1,7 @@
 import { Link } from "react-router-dom";
 
 import arrow from "@/assets/images/icons/arrow.svg";
-import { useResponsivePadding } from "@/lib/hooks";
+import { useResponsivePadding, useTranslation } from "@/lib/hooks";
 import { SmallCardContent as Type } from "@/lib/types/components";
 
 import SectionContainer from "../ui/section-container/SectionContainer";
@@ -29,16 +29,18 @@ const SmallCardSection = (props: Type) => {
     desktopPadding,
   });
 
+  const { translation } = useTranslation();
+
   return (
     <div style={{ padding }}>
       <SectionContainer className="main-container">
         <div className="space-y-[15px] text-center md:space-y-[30px]">
           <p className="font-lyon text-[32px] leading-[38.4px] tracking-[-2%] md:text-[66px] md:leading-[79.2px]">
-            {title}
+            {title[translation]}
           </p>
 
           <p className="mx-auto max-w-[886px] text-[15px] font-medium leading-[18px] md:text-[22px] md:leading-[26.4px]">
-            {description}
+            {description[translation]}
           </p>
         </div>
 
@@ -62,11 +64,11 @@ const SmallCardSection = (props: Type) => {
                   />
                 </Link>
                 <p className="font-lyon text-[27px] leading-[32.4px] md:text-[36px] md:leading-[43.2px] lg:max-w-[295px]">
-                  {title}
+                  {title[translation]}
                 </p>
 
                 <p className="max-w-[258px] text-[15px] font-light md:max-w-max md:text-[18px]">
-                  {description}
+                  {description[translation]}
                 </p>
               </div>
             );

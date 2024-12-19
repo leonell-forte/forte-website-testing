@@ -6,11 +6,19 @@ export const layoutQuery = `
             }
 
             menu {
-                label
+                label {
+                    en
+
+                    es
+                }
                 link
             }  
 
-            buttonLabel
+            buttonLabel {
+                en
+
+                es
+            }
             
             buttonLink 
         }
@@ -19,20 +27,36 @@ export const layoutQuery = `
                 url
             }
                 
-            description
+            description {
+                en
+
+                es
+            }
             links {
-                label
+                label {
+                    en
+
+                    es
+                }
                 
                 link
             }
                 
             socials {
-                label
+                label {
+                    en
+
+                    es
+                }
                 
                 link
             }
                 
-            credits
+            credits {
+                en
+
+                es
+            }
         }
     }
 `;

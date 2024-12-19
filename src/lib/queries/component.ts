@@ -2,11 +2,23 @@ export const heroSectionQuery = `
     ... on HeroSectionRecord {
         __typename
 
-        mainText
+        mainText {
+          en
 
-        secondaryText
+          es
+        }
 
-        buttonLabel
+        secondaryText {
+          en
+
+          es
+        }
+
+        buttonLabel {
+          en
+
+          es
+        }
 
         buttonLink
 
@@ -30,18 +42,34 @@ export const cardSectionQuery = `
     ... on CardSectionRecord{
         __typename
 
-        header
+        header {
+          en
 
-        description
+          es
+        }
+
+        description {
+          en
+
+          es
+        }
 
          cards {
-            title
+            title {
+          en
+
+          es
+        }
             
-            description
+        description {
+          en
+
+          es
+        }
             
-            image {
-                url
-            }
+        image {
+            url
+        }
         }
 
         mobilePadding
@@ -56,21 +84,41 @@ export const featureSectionQuery = `
      ... on FeatureSectionRecord {
             __typename
 
-            title
+            title {
+              en
+
+              es
+            }
 
             features {
-                title
+                title {
+                  en
+
+                  es
+                }
                 
-                headline
+                headline {
+                  en
+
+                  es
+                }
                 
-                description
+                description {
+                  en
+
+                  es
+                }
                 
                 image {
                     url
                 }
                 
                 points {
-                    description
+                    description {
+                      en
+
+                      es
+                    }
                 }
             }
 
@@ -86,14 +134,30 @@ export const smallCardSectionQuery = `
   ... on SmallCardSectionRecord {
             __typename
 
-            title
+            title {
+              en
 
-            description
+              es
+            }
+
+            description {
+              en
+
+              es
+            }
 
             smallCards {
-              title
+              title {
+                en
+
+                es
+              }
               
-              description
+              description {
+                en
+
+                es
+              }
               
               link
             }
@@ -110,18 +174,34 @@ export const bigCardSectionQuery = `
    ... on BigCardSectionRecord {
             __typename
 
-            title
+            title {
+              en
+
+              es
+            }
             
-            description
+            description {
+              en
+
+              es
+            }
             
             bigCard {
               image {
                 url
               }
                 
-              title
+              title {
+                en
+
+                es
+              }
               
-              description
+              description {
+                en
+
+                es
+              }
             }
 
             mobilePadding
@@ -136,7 +216,11 @@ export const partnersSectionQuery = `
      ... on PartnersSectionRecord {
             __typename
 
-            title
+            title {
+              en
+
+              es
+            }
 
             flex
             
@@ -163,7 +247,11 @@ export const carouselSectionQuery = `
             }
 
             carouselItems {
-              mainText
+              mainText {
+                en
+
+                es
+              }
 
               secondaryText
 
@@ -184,13 +272,25 @@ export const ctaSectionQuery = `
   ... on CtaSectionRecord {
       __typename
   
-      title
+      title{
+        en
+
+        es
+      }
       
-      description
+      description{
+        en
+
+        es
+      }
       
       buttonLink
       
-      buttonLabel
+      buttonLabel{
+        en
+
+        es
+      }
       
       mobileBackground {
         url
@@ -212,7 +312,11 @@ export const infiniteCarouselQuery = `
      ... on InfiniteCarouselRecord {
           __typename
           
-          title
+          title {
+            en
+
+            es
+          }
           
           partner {
             image {

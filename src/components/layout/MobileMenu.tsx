@@ -1,6 +1,7 @@
 import { motion } from "framer-motion";
 import { Link } from "react-router-dom";
 
+import { useTranslation } from "@/lib/hooks";
 import { Menus } from "@/lib/types/layout";
 
 interface IProps {
@@ -16,6 +17,8 @@ const MobileMenu = ({ menus, isOpen, handleClick }: IProps) => {
     ? { opacity: 1, display: "block" }
     : { opacity: 0, display: "none" };
 
+  const { translation } = useTranslation();
+
   return (
     <motion.div
       initial={style}
@@ -29,7 +32,9 @@ const MobileMenu = ({ menus, isOpen, handleClick }: IProps) => {
 
           return (
             <Link key={index} to={link} onClick={handleClick}>
-              <li className="border-b py-[50px] text-[30px]">{label}</li>
+              <li className="border-b py-[50px] text-[30px]">
+                {label[translation]}
+              </li>
             </Link>
           );
         })}

@@ -1,4 +1,18 @@
-import { MutableRefObject, useCallback, useEffect, useState } from "react";
+import {
+  MutableRefObject,
+  useCallback,
+  useContext,
+  useEffect,
+  useMemo,
+  useState,
+} from "react";
+
+import {
+  TranslationContext,
+  TranslationContextType,
+} from "@/components/TranslationProvider";
+
+import { Languages } from "./types/languages";
 
 const BREAKPOINTS = {
   mobile: 768, // Anything less than 768px is considered mobile
@@ -102,4 +116,10 @@ export const useResponsivePadding = ({
   if (isDesktop) padding = desktopPadding;
 
   return { padding };
+};
+
+export const useTranslation = (): TranslationContextType => {
+  const context = useContext(TranslationContext);
+
+  return context as TranslationContextType;
 };

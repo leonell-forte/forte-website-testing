@@ -2,14 +2,14 @@ import classNames from "classnames";
 import { useState } from "react";
 import { Link, useLocation } from "react-router-dom";
 
-import chevron from "@/assets/images/icons/chevron.svg";
 import closedMenu from "@/assets/images/icons/closedMenu.svg";
 import menu from "@/assets/images/icons/menu.svg";
-import world from "@/assets/images/icons/world.svg";
+import { useTranslation } from "@/lib/hooks";
 import { IHeader } from "@/lib/types/layout";
 
 import Button from "../ui/button/button";
 import MobileMenu from "./MobileMenu";
+import TranslateDropdown from "./TranslateDropdown";
 
 const Header = (props: IHeader) => {
   const [isOpen, setIsOpen] = useState(false);
@@ -17,6 +17,8 @@ const Header = (props: IHeader) => {
   const { logo, menu: menus, buttonLabel, buttonLink } = props;
 
   const { pathname } = useLocation();
+
+  const { translation } = useTranslation();
 
   return (
     <div className="absolute z-50 w-full">
@@ -45,26 +47,18 @@ const Header = (props: IHeader) => {
                       isSelected && "bg-[#FFFFFF33]"
                     )}
                   >
-                    {label}
+                    {label[translation]}
                   </li>
                 </Link>
               );
             })}
           </ul>
 
-          <div className="z-50 flex items-center justify-end md:w-[200px] md:gap-[15px]">
-            <div className="flex items-center gap-2">
-              <img src={world} alt="world" />
-
-              <div className="flex items-center gap-1">
-                <p className="text-[11px]">ENG</p>
-
-                <img src={chevron} alt="arrow" />
-              </div>
-            </div>
+          <div className="z-50 flex items-center justify-end gap-[15px] md:w-[200px]">
+            <TranslateDropdown />
 
             <Button className="px-6" href={buttonLink} small>
-              {buttonLabel}
+              {buttonLabel[translation]}
             </Button>
 
             <button
