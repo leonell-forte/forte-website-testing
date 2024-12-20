@@ -67,7 +67,7 @@ const FeatureSection = (props: FeatureSectionData) => {
                   <div className="grid grid-cols-1 lg:grid-cols-3">
                     {points.map((item, index) => {
                       const { description, bullet, subtext = null } = item;
-                      console.log(bullet);
+
                       return (
                         <div
                           key={index}
