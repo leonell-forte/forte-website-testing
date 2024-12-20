@@ -61,6 +61,8 @@ export interface Feature {
 
   points: {
     description: ITranslation;
+    bullet: boolean;
+    subtext?: ITranslation;
   }[];
 }
 

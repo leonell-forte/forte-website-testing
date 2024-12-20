@@ -17,6 +17,8 @@ const FeatureSection = (props: FeatureSectionData) => {
 
   const { translation } = useTranslation();
 
+  console.log(features);
+
   return (
     <div className="main-container">
       <div
@@ -38,8 +40,8 @@ const FeatureSection = (props: FeatureSectionData) => {
                   key={index}
                   className="space-y-10 rounded-[9px] bg-[#30F1FF1A] px-5 py-10 md:space-y-[60px] md:px-10 md:py-[60px]"
                 >
-                  <div className="flex flex-col gap-10 md:gap-[60px] lg:flex-row lg:justify-between">
-                    <div className="space-y-[30px] lg:max-w-[488px]">
+                  <div className="flex flex-col gap-x-12 gap-y-12 lg:flex-row lg:justify-between">
+                    <div className="flex-1 space-y-[30px] text-balance">
                       <p className="text-[10px] text-mint md:text-[17px]">
                         {title[translation]}
                       </p>
@@ -62,19 +64,35 @@ const FeatureSection = (props: FeatureSectionData) => {
                     />
                   </div>
 
-                  <div className="flex flex-col lg:flex-row">
+                  <div className="grid grid-cols-1 lg:grid-cols-3">
                     {points.map((item, index) => {
-                      const { description } = item;
-
+                      const { description, bullet, subtext = null } = item;
+                      console.log(bullet);
                       return (
                         <div
                           key={index}
                           className="flex items-start gap-4 border-t py-5 md:py-[30px] lg:pr-[92px]"
                         >
-                          <img src={dot} alt="dot" className="h-6 w-1" />
-                          <p className="text-[12px] md:text-[18px]">
-                            {description[translation]}
-                          </p>
+                          {bullet ? (
+                            <>
+                              <img src={dot} alt="dot" className="h-6 w-1" />
+
+                              <p className="text-[12px] md:text-[18px]">
+                                {description[translation]}
+                              </p>
+                            </>
+                          ) : (
+                            <div className="space-y-[15px]">
+                              <p className="font-lyon text-[27px] md:text-[32px]">
+                                {description[translation]}
+                              </p>
+                              {subtext && (
+                                <p className="text-[12px] md:text-[18px]">
+                                  {subtext[translation]}
+                                </p>
+                              )}
+                            </div>
+                          )}
                         </div>
                       );
                     })}

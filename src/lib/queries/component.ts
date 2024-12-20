@@ -119,6 +119,15 @@ export const featureSectionQuery = `
 
                       es
                     }
+
+                    bullet
+
+                    subtext {
+                      en
+
+                      es
+                    }
+
                 }
             }
 
