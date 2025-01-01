@@ -77,6 +77,8 @@ export const cardSectionQuery = `
         tabletPadding
 
         desktopPadding
+
+        withBottomPadding
     }
  `;
 
@@ -332,5 +334,95 @@ export const infiniteCarouselQuery = `
               url
             }
           }  
+      }   
+ `;
+
+export const aboutHeroSectionQuery = `
+     ... on AboutHeroRecord {
+          __typename
+          
+          title {
+            en
+
+            es
+          }
+
+          desktopImage {
+
+            url
+
+          }
+
+          mobileImage {
+
+            url
+            
+          }
+
+          heading {
+
+            en
+
+            es
+
+          }
+
+          subheading {
+          
+            en
+
+            es
+            
+          }
+
+          mobilePadding
+
+          tabletPadding
+
+          desktopPadding
+          
+      }   
+ `;
+
+export const teamSectionQuery = `
+     ... on TeamSectionRecord {
+          __typename
+          
+          id
+            
+          title {
+          
+            en
+
+            es
+
+          }
+              
+          members {
+          
+            name 
+
+            positionName {
+
+              en
+
+              es
+
+            }
+
+            image {
+
+              url
+
+            }
+
+          }
+
+        mobilePadding
+
+        tabletPadding
+
+        desktopPadding
+          
       }   
  `;

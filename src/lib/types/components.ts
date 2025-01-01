@@ -38,6 +38,8 @@ export interface Card {
   description: ITranslation;
 
   image: Image;
+
+  withBottomPadding: boolean;
 }
 
 export interface CardComponentData extends IPaddings {
@@ -45,9 +47,11 @@ export interface CardComponentData extends IPaddings {
 
   header: ITranslation;
 
-  description: ITranslation;
+  description?: ITranslation;
 
   cards: Card[];
+
+  withBottomPadding: boolean;
 }
 
 export interface Feature {
@@ -79,7 +83,7 @@ export interface Smallcard {
 
   description: ITranslation;
 
-  link: string;
+  link?: string;
 }
 
 export interface SmallCardContent extends IPaddings {
@@ -87,7 +91,7 @@ export interface SmallCardContent extends IPaddings {
 
   title: ITranslation;
 
-  description: ITranslation;
+  description?: ITranslation;
 
   smallCards: Smallcard[];
 }
@@ -174,4 +178,32 @@ export interface CTASectionData extends IPaddings {
   mobileBackground: Image;
 
   desktopBackground: Image;
+}
+
+type Member = {
+  name: string;
+  positionName: ITranslation;
+  image: Image;
+};
+
+export interface AboutHeroComponentData extends IPaddings {
+  __typename: ComponentRecords;
+
+  title: ITranslation;
+
+  mobileImage: Image;
+
+  desktopImage: Image;
+
+  heading: ITranslation;
+
+  subheading: ITranslation;
+}
+
+export interface TeamSectionContent extends IPaddings {
+  __typename: "TeamSectionRecord";
+
+  title: ITranslation;
+
+  members: Member[];
 }

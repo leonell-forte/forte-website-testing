@@ -1,4 +1,5 @@
 import {
+  aboutHeroSectionQuery,
   bigCardSectionQuery,
   cardSectionQuery,
   carouselSectionQuery,
@@ -8,6 +9,7 @@ import {
   infiniteCarouselQuery,
   partnersSectionQuery,
   smallCardSectionQuery,
+  teamSectionQuery,
 } from "./component";
 import { topicListQuery } from "./lists";
 
@@ -75,6 +77,10 @@ export const individualPageQuery = (id: string) => {
                     ${topicListQuery}
 
                     ${infiniteCarouselQuery}
+
+                    ${aboutHeroSectionQuery}
+
+                    ${teamSectionQuery}
 
                 }
 
