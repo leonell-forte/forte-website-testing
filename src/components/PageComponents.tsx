@@ -13,6 +13,7 @@ import FeatureSection from "./sections/FeatureSection/FeatureSection";
 import HeroSection from "./sections/HeroSection";
 import InfiniteCarouselSection from "./sections/InfiniteCarouselSection";
 import PartnersSection from "./sections/PartnersSection";
+import PrivacyPolicy from "./sections/PrivacyPolicySection";
 import SmallCardSection from "./sections/SmallCardSection";
 import TeamSection from "./sections/TeamSection";
 import Contact from "./sections/static/Contact";
@@ -90,6 +91,9 @@ const PageComponents = ({ id, slug }: PageCompomnentProps) => {
 
                 case "TeamSectionRecord":
                   return <TeamSection key={index} {...item} />;
+
+                case "PrivacyPolicyRecord":
+                  return <PrivacyPolicy key={index} {...item} />;
 
                 default:
                   return "";

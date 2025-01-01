@@ -8,6 +8,7 @@ import {
   heroSectionQuery,
   infiniteCarouselQuery,
   partnersSectionQuery,
+  privacyPolicyQuery,
   smallCardSectionQuery,
   teamSectionQuery,
 } from "./component";
@@ -81,6 +82,8 @@ export const individualPageQuery = (id: string) => {
                     ${aboutHeroSectionQuery}
 
                     ${teamSectionQuery}
+
+                    ${privacyPolicyQuery}
 
                 }
 

@@ -18,6 +18,8 @@
     "axios": "^1.7.9",
     "classnames": "^2.5.1",
     "clsx": "^2.1.1",
+    "datocms-structured-text-to-html-string": "^4.0.2",
+    "dompurify": "^3.2.3",
     "framer-motion": "^11.11.10",
     "lucide-react": "^0.468.0",
     "react": "^18.3.1",

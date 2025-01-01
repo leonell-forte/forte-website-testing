@@ -207,3 +207,14 @@ export interface TeamSectionContent extends IPaddings {
 
   members: Member[];
 }
+
+export interface PrivacyPolicyContent extends IPaddings {
+  __typename: "PrivacyPolicyRecord";
+
+  title: ITranslation;
+
+  content: {
+    es: any;
+    en: any;
+  };
+}

@@ -77,8 +77,6 @@ export const cardSectionQuery = `
         tabletPadding
 
         desktopPadding
-
-        withBottomPadding
     }
  `;
 
@@ -425,4 +423,28 @@ export const teamSectionQuery = `
         desktopPadding
           
       }   
+ `;
+
+export const privacyPolicyQuery = `
+     ... on PrivacyPolicyRecord {
+          __typename
+          
+          title {
+            en
+
+            es
+          }
+
+          content {
+            en {
+              value            
+            }
+
+            es {
+              value            
+            }
+
+          }
+
+      }
  `;
