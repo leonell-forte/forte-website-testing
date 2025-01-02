@@ -17,6 +17,8 @@ const CardSection = (props: CardComponentData) => {
     tabletPadding,
 
     desktopPadding,
+
+    withBottomPadding,
   } = props;
 
   const { padding } = useResponsivePadding({
@@ -36,21 +38,29 @@ const CardSection = (props: CardComponentData) => {
           padding,
         }}
       >
-        <SectionContainer>
+        <SectionContainer className="main-container">
           <div className="space-y-[30px] px-5 text-center">
             <p className="font-lyon text-[32px] leading-[38.4px] tracking-[-2%] md:text-[66px] md:leading-[79.2px]">
               {header[translation]}
             </p>
 
-            <p className="mx-auto max-w-[348px] text-[15px] leading-[18px] md:max-w-[658px] md:text-[22px] md:leading-[26.4px] lg:max-w-[792px]">
-              {description[translation]}
-            </p>
+            {description && (
+              <p className="mx-auto max-w-[348px] text-[15px] leading-[18px] md:max-w-[658px] md:text-[22px] md:leading-[26.4px] lg:max-w-[792px]">
+                {description[translation]}
+              </p>
+            )}
           </div>
 
-          <div className="hide-scroll w-full overflow-scroll px-5">
-            <div className="mx-auto flex w-fit flex-col flex-wrap gap-5 lg:flex-row lg:justify-center">
+          <div className="hide-scroll w-full overflow-scroll">
+            <div className="mx-auto grid grid-cols-1 flex-wrap gap-5 lg:grid-cols-3 lg:justify-center">
               {cards.map((item, index) => {
-                return <Card key={index} {...item} />;
+                return (
+                  <Card
+                    key={index}
+                    {...item}
+                    withBottomPadding={withBottomPadding}
+                  />
+                );
               })}
             </div>
           </div>

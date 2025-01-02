@@ -58,7 +58,7 @@ body {
 }
 
 .main-container {
-  @apply px-5 md:px-10 mx-auto;
+  @apply mx-auto px-5 md:px-10;
   max-width: 1440px;
 }
 
@@ -87,4 +87,46 @@ input:-webkit-autofill:active {
 
 .MuiStack-root {
   padding: 0 !important;
+}
+
+.rich-container {
+  h1 {
+    font-size: 50px;
+    font-weight: 400;
+    line-height: 60px;
+    font-family: Lyon, sans-serif !important;
+    margin-bottom: 100px;
+  }
+
+  h3 {
+    font-size: 22px;
+    font-weight: 600;
+    line-height: 26.4px;
+    margin-bottom: 1rem;
+  }
+  p {
+    margin-bottom: 1.75rem;
+  }
+
+  ul {
+    list-style: disc;
+    padding-left: 1rem;
+  }
+
+  li > p {
+    margin-bottom: 0px;
+  }
+
+  @media (max-width: 640px) {
+    h1 {
+      font-size: 27px;
+      line-height: 30px;
+      margin-bottom: 50px;
+    }
+
+    h3 {
+      font-size: 18px;
+      line-height: 20px;
+    }
+  }
 }
