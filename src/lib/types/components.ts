@@ -1,3 +1,5 @@
+import { StructuredTextDocument } from "datocms-structured-text-to-html-string";
+
 import { ComponentRecords, Image } from "./pages";
 
 export interface IPaddings {
@@ -214,7 +216,7 @@ export interface PrivacyPolicyContent extends IPaddings {
   title: ITranslation;
 
   content: {
-    es: any;
-    en: any;
+    es: StructuredTextDocument;
+    en: StructuredTextDocument;
   };
 }

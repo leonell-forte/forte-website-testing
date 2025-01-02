@@ -2,7 +2,7 @@ import { render } from "datocms-structured-text-to-html-string";
 import DOMPurify from "dompurify";
 import { useMemo } from "react";
 
-import { useResponsivePadding, useTranslation } from "@/lib/hooks";
+import { useTranslation } from "@/lib/hooks";
 import { PrivacyPolicyContent as Type } from "@/lib/types/components";
 
 import SectionContainer from "../ui/section-container/SectionContainer";
@@ -16,8 +16,6 @@ const PrivacyPolicy = (props: Type) => {
     () => render(content[translation]) as string,
     [content, translation]
   );
-
-  console.log(raw);
 
   return (
     <div className="py-[100px]">
