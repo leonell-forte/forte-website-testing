@@ -1,6 +1,6 @@
 import React, { ReactNode, createContext, useEffect, useState } from "react";
 
-import { isWithinLatinAmerica } from "@/lib/helpers";
+import { getIpAddress, isWithinLatinAmerica } from "@/lib/helpers";
 import { Languages } from "@/lib/types/languages";
 
 export interface TranslationContextType {
@@ -25,10 +25,14 @@ const TranslationProvider = ({ children }: { children: ReactNode }) => {
   }, [translation]);
 
   useEffect(() => {
-    navigator.geolocation.getCurrentPosition((position) => {
-      const { latitude, longitude } = position.coords;
-      if (isWithinLatinAmerica(latitude, longitude)) setTranslation("es");
-    });
+    const res = async () => {
+      const response = await getIpAddress();
+
+      if (isWithinLatinAmerica(response.lat, response.lon)) {
+        setTranslation("es");
+      }
+    };
+    res();
   }, []);
 
   return (
