@@ -28,7 +28,7 @@ const TranslationProvider = ({ children }: { children: ReactNode }) => {
     const res = async () => {
       const response = await getIpAddress();
 
-      if (isWithinLatinAmerica(response.lat, response.lon)) {
+      if (isWithinLatinAmerica(response?.latitude, response?.longitude)) {
         setTranslation("es");
       }
     };

@@ -12,7 +12,7 @@ export const isWithinLatinAmerica = (lat: number, lng: number): boolean => {
 
 export const getIpAddress = async () => {
   try {
-    const response = await axios.get("http://ip-api.com/json/");
+    const response = await axios.get("https://ipapi.co/json/");
     return response.data;
   } catch (error) {
     console.error("Error fetching IP address:", error);
