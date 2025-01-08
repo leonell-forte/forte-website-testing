@@ -99,22 +99,33 @@ input:-webkit-autofill:active {
   }
 
   h3 {
-    font-size: 22px;
+    font-size: 32px;
     font-weight: 600;
-    line-height: 26.4px;
+    line-height: 36.4px;
     margin-bottom: 1rem;
+    margin-top: 4rem;
   }
   p {
     margin-bottom: 1.75rem;
+    font-size: 24px;
+    line-height: 28.8px;
   }
 
   ul {
     list-style: disc;
-    padding-left: 1rem;
+    padding-left: 2rem;
+  }
+
+  p:has(+ ul) {
+    margin-bottom: 0 !important;
   }
 
   li > p {
     margin-bottom: 0px;
+  }
+
+  li::marker {
+    font-size: 1.5rem;
   }
 
   @media (max-width: 640px) {

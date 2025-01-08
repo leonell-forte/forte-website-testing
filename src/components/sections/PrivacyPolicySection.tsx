@@ -24,7 +24,7 @@ const PrivacyPolicy = (props: Type) => {
           {title[translation]}
         </p>
         <div
-          className="rich-container mx-auto lg:max-w-[650px]"
+          className="rich-container mx-auto lg:max-w-[715px]"
           dangerouslySetInnerHTML={{ __html: DOMPurify.sanitize(raw) }}
         />
       </SectionContainer>
