@@ -9,6 +9,7 @@ import BigCardSection from "./sections/BigCardSection";
 import CTASection from "./sections/CTASection/CTASection";
 import CardSection from "./sections/CardSection/CardSection";
 import CarouselSection from "./sections/CarouselSection";
+import CommunitySection from "./sections/CommunitySection";
 import FeatureSection from "./sections/FeatureSection/FeatureSection";
 import HeroSection from "./sections/HeroSection";
 import InfiniteCarouselSection from "./sections/InfiniteCarouselSection";
@@ -94,6 +95,9 @@ const PageComponents = ({ id, slug }: PageCompomnentProps) => {
 
                 case "PrivacyPolicyRecord":
                   return <PrivacyPolicy key={index} {...item} />;
+
+                case "CommunitySectionRecord":
+                  return <CommunitySection key={index} {...item} />;
 
                 default:
                   return "";

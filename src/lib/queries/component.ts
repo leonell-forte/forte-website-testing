@@ -448,3 +448,78 @@ export const privacyPolicyQuery = `
 
       }
  `;
+
+export const communitiesQuery = `
+ ... on CommunitySectionRecord {
+          __typename
+          sections {
+            partners {
+              title {
+                en
+                es
+              }
+              partner {
+                image {
+                  url
+                }
+              }
+              mobilePadding
+              tabletPadding
+              desktopPadding
+            }
+            testimonial {
+              carouselItems {
+                mainText {
+                  en
+                  es
+                }
+                secondaryText
+                image {
+                  url
+                }
+              }
+              backgroundImage {
+                url
+              }
+              mobilePadding
+              tabletPadding
+              desktopPadding
+            }
+            trustedBy {
+              title {
+                en
+                es
+              }
+              partner {
+                image {
+                  url
+                }
+              }
+            }
+            cta {
+              mobileBackground {
+                url
+              }
+              desktopBackground {
+                url
+              }
+              title {
+                en
+                es
+              }
+              description {
+                en
+                es
+              }
+              buttonLabel {
+                en
+                es
+              }
+              buttonLink
+              mobilePadding
+              tabletPadding
+              desktopPadding
+            }
+          }
+        }
+`;

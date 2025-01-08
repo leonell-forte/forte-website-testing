@@ -3,6 +3,7 @@ import {
   bigCardSectionQuery,
   cardSectionQuery,
   carouselSectionQuery,
+  communitiesQuery,
   ctaSectionQuery,
   featureSectionQuery,
   heroSectionQuery,
@@ -84,6 +85,8 @@ export const individualPageQuery = (id: string) => {
                     ${teamSectionQuery}
 
                     ${privacyPolicyQuery}
+
+                    ${communitiesQuery}
 
                 }
 

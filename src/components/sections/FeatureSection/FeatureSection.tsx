@@ -17,8 +17,6 @@ const FeatureSection = (props: FeatureSectionData) => {
 
   const { translation } = useTranslation();
 
-  console.log(features);
-
   return (
     <div className="main-container">
       <div
