@@ -33,7 +33,7 @@ const TranslateDropdown = () => {
       </div>
 
       {show && (
-        <ul className="absolute right-0 top-6 w-[70px] rounded-[4px] bg-white p-2">
+        <ul className="absolute right-0 top-6 rounded-[4px] bg-white px-2.5 py-2">
           {Object.keys(languages).map((item, index) => {
             const langKey = item as Languages;
 
@@ -41,7 +41,7 @@ const TranslateDropdown = () => {
               <button
                 onClick={() => setTranslation(item as Languages)}
                 key={index}
-                className="w-full p-1 text-right transition-all hover:bg-gray-100"
+                className="w-full rounded p-2 text-left transition-all hover:bg-gray-100"
               >
                 <li className="text-[12px] text-forest-green">
                   {languages[langKey]}
