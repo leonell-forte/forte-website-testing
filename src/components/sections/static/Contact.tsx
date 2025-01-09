@@ -1,19 +1,35 @@
+import { AnimatePresence } from "framer-motion";
+
 import Button from "@/components/ui/button/button";
 import { Form } from "@/components/ui/form/Form";
 import Input from "@/components/ui/form/Input";
 import Select from "@/components/ui/form/Select";
 import Textarea from "@/components/ui/form/Textarea";
+import {
+  InlineToast,
+  useMessage,
+} from "@/components/ui/inline-toast/InlineToast";
+import { useContactMutation } from "@/lib/mutations";
 import { ContactProps } from "@/lib/types/pages";
 import { useForm } from "@/lib/utilities/useForm";
-import { IContactForm, contact } from "@/lib/validators/contact";
+import { IContactForm, contact, defaultValues } from "@/lib/validators/contact";
 
 const Contact = (props: ContactProps) => {
+  const { messageState, showMessage } = useMessage();
   const { title, topicList } = props;
   const form = useForm(contact);
-  const { register, control } = form;
+  const { register, control, reset } = form;
+
+  const { sendContact, isPending } = useContactMutation(
+    () => {
+      reset(defaultValues);
+      showMessage("Your message was sent!", "success");
+    },
+    () =>
+      showMessage("Your message was not sent! Please try again later", "error")
+  );
   const onSubmit = async (values: IContactForm) => {
-    console.log(values);
-    alert(JSON.stringify(values));
+    sendContact(values);
   };
 
   return (
@@ -47,8 +63,21 @@ const Contact = (props: ContactProps) => {
             <div className="w-full">
               <Textarea {...register("message")} label="Message" />
             </div>
-            <div className="flex sm:justify-end">
-              <Button type="submit" small className="w-full sm:w-[8.9375rem]">
+            <div className="relative flex sm:justify-end">
+              <AnimatePresence>
+                {messageState.show && (
+                  <InlineToast
+                    type={messageState.type}
+                    text={messageState.text}
+                  />
+                )}
+              </AnimatePresence>
+              <Button
+                type="submit"
+                small
+                className="w-full sm:w-[8.9375rem]"
+                disabled={isPending}
+              >
                 Submit
               </Button>
             </div>

@@ -201,6 +201,7 @@ export default function SelectComp<T extends FieldValues>({
               onValueChange={onChange}
               defaultValue={value}
               disabled={disabled}
+              value={value}
             >
               <SelectTrigger error={errorMessage}>
                 <SelectValue placeholder={placeholder || label} />

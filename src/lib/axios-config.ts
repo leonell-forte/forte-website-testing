@@ -14,6 +14,16 @@ export const api = axios.create({
   },
 });
 
+export const apiForte = axios.create({
+  baseURL: import.meta.env.VITE_API_URL,
+
+  headers: {
+    "Content-Type": "application/json",
+
+    Accept: "application/json",
+  },
+});
+
 // Add a request interceptor
 api.interceptors.request.use(
   function (config) {

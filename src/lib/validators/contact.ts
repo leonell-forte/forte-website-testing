@@ -1,19 +1,21 @@
 import { z } from "zod";
 
+export const defaultValues = {
+  firstName: "",
+
+  lastName: "",
+
+  email: "",
+
+  phoneNumber: "",
+
+  topic: "",
+
+  message: "",
+};
+
 export const contact = {
-  defaultValues: {
-    firstName: "",
-
-    lastName: "",
-
-    email: "",
-
-    phoneNumber: "",
-
-    topic: "",
-
-    message: "",
-  },
+  defaultValues,
   schema: z.object({
     firstName: z.string().min(1, "Your first name is required"),
 
