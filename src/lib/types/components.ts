@@ -154,6 +154,18 @@ export interface CarouselContent extends IPaddings {
   carouselItems: CarouselItem[];
 }
 
+export interface CommunityContent {
+  sections: {
+    partners: PartnersContent;
+
+    testimonial: CarouselContent;
+
+    trustedBy: InfiniteCarouselContent;
+
+    cta: CTASectionData;
+  };
+}
+
 export interface ContentSectionData {
   __typename: string;
 
