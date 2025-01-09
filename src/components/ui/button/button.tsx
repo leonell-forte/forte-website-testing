@@ -31,7 +31,7 @@ const Button = ({
     <button
       {...props}
       className={classNames(
-        "rounded-[30px] bg-white px-10 font-medium text-black",
+        "rounded-[30px] bg-white px-10 font-medium text-black disabled:pointer-events-none disabled:bg-[#787878] disabled:text-gray-300",
 
         small ? "h-10" : "h-[50px] text-[18px]",
 
