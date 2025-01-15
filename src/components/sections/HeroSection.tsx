@@ -69,7 +69,7 @@ const HeroSection = (props: HeroComponentData) => {
           padding,
         }}
       >
-        <div className="mx-auto flex max-w-[1200px] flex-col items-center gap-[60px] text-center">
+        <div className="mx-auto flex max-w-[1200px] flex-col items-center gap-[60px] text-center md:gap-[100px]">
           <div className="space-y-[30px] md:space-y-[45px]">
             <p className="font-lyon text-[40px] leading-[44px] md:text-[82px] md:leading-[90.2px]">
               {mainText[translation]}

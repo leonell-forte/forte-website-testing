@@ -1,8 +1,10 @@
 import { AnimatePresence } from "framer-motion";
+import { Controller } from "react-hook-form";
 
 import Button from "@/components/ui/button/button";
 import { Form } from "@/components/ui/form/Form";
 import Input from "@/components/ui/form/Input";
+import InputMobile from "@/components/ui/form/InputMobile";
 import Select from "@/components/ui/form/Select";
 import Textarea from "@/components/ui/form/Textarea";
 import {
@@ -50,7 +52,17 @@ const Contact = (props: ContactProps) => {
             </div>
             <div className="grid gap-1.5 gap-x-12 md:grid-cols-2 md:gap-y-4">
               <Input {...register("email")} label="Email" />
-              <Input {...register("phoneNumber")} label="Phone" />
+              <Controller
+                control={control}
+                name="phoneNumber"
+                render={({ field: { onChange } }) => (
+                  <InputMobile
+                    onChange={onChange}
+                    label="Phone"
+                    name="phoneNumber"
+                  />
+                )}
+              />
             </div>
             <div className="w-full">
               <Select

@@ -70,6 +70,8 @@ export interface Feature {
     bullet: boolean;
     subtext?: ITranslation;
   }[];
+
+  imagePadding?: string;
 }
 
 export interface FeatureSectionData extends IPaddings {

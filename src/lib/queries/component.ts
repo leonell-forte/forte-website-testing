@@ -77,6 +77,8 @@ export const cardSectionQuery = `
         tabletPadding
 
         desktopPadding
+        
+        withBottomPadding
     }
  `;
 
@@ -90,7 +92,11 @@ export const featureSectionQuery = `
               es
             }
 
+
             features {
+
+                imagePadding
+
                 title {
                   en
 
