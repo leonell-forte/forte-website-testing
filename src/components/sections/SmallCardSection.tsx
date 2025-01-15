@@ -70,7 +70,7 @@ const SmallCardSection = (props: Type) => {
                 )}
                 <p
                   className={classNames(
-                    "font-lyon text-[27px] leading-[32.4px] md:text-[36px] md:leading-[43.2px]",
+                    "font-lyon text-[27px] leading-[32.4px] md:text-[36px] md:leading-[38.2px]",
                     link ? "lg:max-w-[295px]" : ""
                   )}
                 >

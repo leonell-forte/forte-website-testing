@@ -23,7 +23,7 @@ const Textarea = forwardRef<HTMLTextAreaElement, Props>(function FTA(
     readOnly = false,
     maxLength = undefined,
     placeholder = undefined,
-    rows = 10,
+    rows = 6,
     ...rest
   },
   ref

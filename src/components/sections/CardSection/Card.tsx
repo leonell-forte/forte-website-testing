@@ -11,16 +11,16 @@ const Card = (props: Cardtype) => {
   return (
     <div
       className={classNames(
-        "flex justify-between rounded-[9px] bg-[#30F1FF1A] backdrop-blur-[69.83px] md:rounded-[18px] lg:h-[426px] lg:flex-shrink-0 lg:gap-4 lg:p-[30px]",
+        "flex rounded-[9px] bg-[#30F1FF1A] backdrop-blur-[69.83px] md:rounded-[18px] lg:flex-shrink-0",
         withBottomPadding
-          ? "h-[310px] flex-col p-5 md:h-[235px] md:flex-row md:items-center md:gap-10 lg:flex-col lg:items-start lg:pb-[74px]"
-          : "h-full flex-col p-8 md:gap-[90px]"
+          ? "h-full flex-col gap-[120px] px-5 pb-5 pt-5 md:flex-row md:items-center md:gap-[40px] md:px-10 md:pb-[56px] md:pt-10 lg:flex-col lg:items-start lg:gap-[76px] lg:px-8 lg:pb-[74px] lg:pt-8"
+          : "h-full flex-col justify-between p-7 md:gap-[90px] lg:min-h-[426px]"
       )}
     >
       <div
         className={classNames(
           "flex-shrink-0 lg:w-[120px]",
-          withBottomPadding ? "w-20 md:w-[100px]" : "md:w-[150px]"
+          withBottomPadding ? "w-20 md:w-[100px]" : ""
         )}
       >
         {image && (
@@ -28,7 +28,9 @@ const Card = (props: Cardtype) => {
             src={image.url}
             alt="card-image"
             className={classNames(
-              withBottomPadding ? "block" : "hidden md:block"
+              withBottomPadding
+                ? "w-[80px] bg-cover md:w-[100px] lg:h-[106px] lg:w-[120px]"
+                : "hidden max-h-[60px] md:block"
             )}
           />
         )}

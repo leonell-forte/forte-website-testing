@@ -1,11 +1,17 @@
 import dot from "@/assets/images/icons/dot.svg";
 import SectionContainer from "@/components/ui/section-container/SectionContainer";
-import { useResponsivePadding, useTranslation } from "@/lib/hooks";
+import {
+  useResponsivePadding,
+  useScreenSize,
+  useTranslation,
+} from "@/lib/hooks";
 import { FeatureSectionData } from "@/lib/types/components";
 
 const FeatureSection = (props: FeatureSectionData) => {
   const { features, title, mobilePadding, tabletPadding, desktopPadding } =
     props;
+
+  const { isDesktop } = useScreenSize();
 
   const { padding } = useResponsivePadding({
     mobilePadding,
@@ -36,9 +42,9 @@ const FeatureSection = (props: FeatureSectionData) => {
               return (
                 <div
                   key={index}
-                  className="space-y-10 rounded-[9px] bg-[#30F1FF1A] px-5 py-10 md:space-y-[60px] md:px-10 md:py-[60px]"
+                  className="space-y-10 rounded-[9px] bg-[#30F1FF1A] px-5 py-10 md:space-y-[60px] md:px-10 md:py-[60px] lg:py-[80px]"
                 >
-                  <div className="flex flex-col gap-x-12 gap-y-12 lg:flex-row lg:justify-between">
+                  <div className="flex flex-col gap-x-12 gap-y-12 lg:min-h-[487px] lg:flex-row lg:justify-between">
                     <div className="flex-1 space-y-[30px] text-balance">
                       <p className="text-[10px] text-mint md:text-[17px]">
                         {title[translation]}
@@ -58,7 +64,10 @@ const FeatureSection = (props: FeatureSectionData) => {
                     <img
                       src={image.url}
                       alt="feature-image"
-                      className="lg:max-w-[488px]"
+                      className="h-fit lg:max-w-[488px]"
+                      style={{
+                        margin: isDesktop ? item.imagePadding : "0px",
+                      }}
                     />
                   </div>
 
@@ -69,11 +78,15 @@ const FeatureSection = (props: FeatureSectionData) => {
                       return (
                         <div
                           key={index}
-                          className="flex items-start gap-4 border-t py-5 md:py-[30px] lg:pr-[92px]"
+                          className="flex items-start gap-2 border-t pb-[25px] pt-[20px] md:gap-3 md:pb-[50px] md:pt-[30px] lg:gap-4 lg:pb-0 lg:pr-[92px] lg:pt-[50px]"
                         >
                           {bullet ? (
                             <>
-                              <img src={dot} alt="dot" className="h-6 w-1" />
+                              <img
+                                src={dot}
+                                alt="dot"
+                                className="mt-1 min-w-0.5 md:mt-1.5 md:min-w-2 lg:mt-1.5"
+                              />
 
                               <p className="text-[12px] md:text-[18px]">
                                 {description[translation]}

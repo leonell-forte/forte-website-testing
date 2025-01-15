@@ -16,16 +16,16 @@ import FormFieldWrapper, {
   type Props as WrapperProps,
 } from "./FormFieldWrapper";
 
-const Select = SelectPrimitive.Root;
+export const Select = SelectPrimitive.Root;
 
-const SelectValue = SelectPrimitive.Value;
+export const SelectValue = SelectPrimitive.Value;
 
 interface ITrigger
   extends React.ComponentPropsWithoutRef<typeof SelectPrimitive.Trigger> {
   error?: string;
 }
 
-const SelectTrigger = React.forwardRef<
+export const SelectTrigger = React.forwardRef<
   React.ElementRef<typeof SelectPrimitive.Trigger>,
   ITrigger
 >(({ className, children, error, ...props }, ref) => (
@@ -87,7 +87,7 @@ const SelectScrollDownButton = React.forwardRef<
 SelectScrollDownButton.displayName =
   SelectPrimitive.ScrollDownButton.displayName;
 
-const SelectContent = React.forwardRef<
+export const SelectContent = React.forwardRef<
   React.ElementRef<typeof SelectPrimitive.Content>,
   React.ComponentPropsWithoutRef<typeof SelectPrimitive.Content>
 >(({ className, children, position = "popper", ...props }, ref) => (
@@ -131,7 +131,7 @@ const SelectLabel = React.forwardRef<
 ));
 SelectLabel.displayName = SelectPrimitive.Label.displayName;
 
-const SelectItem = React.forwardRef<
+export const SelectItem = React.forwardRef<
   React.ElementRef<typeof SelectPrimitive.Item>,
   React.ComponentPropsWithoutRef<typeof SelectPrimitive.Item>
 >(({ className, children, ...props }, ref) => (
