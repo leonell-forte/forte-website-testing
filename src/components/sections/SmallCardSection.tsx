@@ -38,7 +38,7 @@ const SmallCardSection = (props: Type) => {
 
   return (
     <div style={{ padding }}>
-      <SectionContainer className="main-container -mt-[15px] !space-y-[80px] !px-16">
+      <SectionContainer className="main-container !space-y-[80px] !px-16 lg:-mt-[15px]">
         <div className="space-y-[15px] text-center md:space-y-[30px]">
           <p className="font-lyon text-[32px] leading-[38.4px] -tracking-[1.25px] md:text-[66px] md:leading-[79.2px]">
             {title[translation]}

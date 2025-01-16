@@ -41,7 +41,7 @@ const FeatureSection = (props: FeatureSectionData) => {
           <p
             className={cn(
               "text-center font-lyon text-[32px] leading-[38.4px] -tracking-[1.25px] md:text-[66px] md:leading-[66px] lg:mx-auto lg:leading-[79.2px]",
-              isExpertise ? "lg:max-w-[1024px]" : "-mt-[50px]"
+              isExpertise ? "lg:max-w-[1024px]" : "lg:-mt-[50px]"
             )}
           >
             {title[translation]}

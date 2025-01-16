@@ -1,4 +1,5 @@
 import { useQuery } from "@tanstack/react-query";
+import { AnimatePresence } from "framer-motion";
 import { Suspense } from "react";
 import { Route, BrowserRouter as Router, Routes } from "react-router-dom";
 
@@ -8,19 +9,21 @@ import { fetchData } from "../api/data-fetcher";
 import { pageQuery } from "../lib/queries/pages";
 import PageComponents from "./PageComponents";
 import Layout from "./layout/Layout";
+import Loader from "./ui/loader/Loader";
 
 const RouteProvider = () => {
   const { data } = useQuery<AllPages>({
     queryKey: ["pages"],
 
     queryFn: () => fetchData(pageQuery),
+    refetchOnWindowFocus: false,
   });
 
   return (
     <Router>
       <Layout>
         <div>
-          <Suspense fallback={<p>loading...</p>}>
+          <AnimatePresence mode="wait">
             <Routes>
               {data?.allPages.map((item, index) => {
                 const { slug, id } = item;
@@ -33,7 +36,7 @@ const RouteProvider = () => {
                 );
               })}
             </Routes>
-          </Suspense>
+          </AnimatePresence>
         </div>
       </Layout>
     </Router>

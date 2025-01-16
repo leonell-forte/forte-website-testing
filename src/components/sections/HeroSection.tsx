@@ -76,7 +76,7 @@ const HeroSection = (props: HeroComponentData) => {
                 {mainText[translation]}
               </p>
 
-              <p className="mx-auto w-[790px] text-[15px] leading-[18px] md:text-[22px] md:leading-[26.4px]">
+              <p className="mx-auto text-[15px] leading-[18px] md:text-[22px] md:leading-[26.4px] lg:w-[790px]">
                 {secondaryText[translation]}
               </p>
             </div>

@@ -18,14 +18,16 @@ import PrivacyPolicy from "./sections/PrivacyPolicySection";
 import SmallCardSection from "./sections/SmallCardSection";
 import TeamSection from "./sections/TeamSection";
 import Contact from "./sections/static/Contact";
+import Loader from "./ui/loader/Loader";
+import { PageTransition } from "./ui/page-transition/PageTransition";
 
 const CONTACT_SLUG = "/contact";
 
 const PageComponents = ({ id, slug }: PageCompomnentProps) => {
-  const { data } = useQuery<IndividualPage>({
+  const { data, isLoading } = useQuery<IndividualPage>({
     queryKey: ["individual-page", id],
-
     queryFn: () => fetchData(individualPageQuery(id)),
+    refetchOnWindowFocus: false,
   });
 
   const { isMobile } = useScreenSize();
@@ -109,7 +111,11 @@ const PageComponents = ({ id, slug }: PageCompomnentProps) => {
     });
   };
 
-  return <div>{renderComponents()}</div>;
+  return (
+    <PageTransition>
+      {isLoading ? <Loader /> : <div>{renderComponents()}</div>}
+    </PageTransition>
+  );
 };
 
 export default PageComponents;

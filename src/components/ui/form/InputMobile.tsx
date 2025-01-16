@@ -52,7 +52,7 @@ type Props = {
   onChange: (str: string) => void;
 } & WrapperProps;
 
-const InputMobile = React.forwardRef<HTMLInputElement, Props>(function FI({
+const InputMobile = ({
   name,
   disabled = false,
   readOnly = false,
@@ -60,7 +60,7 @@ const InputMobile = React.forwardRef<HTMLInputElement, Props>(function FI({
   label,
   onChange,
   value = "",
-}) {
+}: Props) => {
   const {
     formState: { errors },
   } = useFormContext();
@@ -150,6 +150,6 @@ const InputMobile = React.forwardRef<HTMLInputElement, Props>(function FI({
       </div>
     </FormFieldWrapper>
   );
-});
+};
 
 export default InputMobile;

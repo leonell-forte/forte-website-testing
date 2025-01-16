@@ -6,15 +6,14 @@ import { fetchData } from "@/api/data-fetcher";
 import { layoutQuery } from "@/lib/queries/layout";
 import { ILayout, LayoutType } from "@/lib/types/layout";
 
-import { ScrollArea } from "../ui/scroll-area/ScrollArea";
 import Footer from "./Footer";
 import Header from "./Header";
 
 const Layout = ({ children }: ILayout) => {
   const { data, isLoading } = useQuery<LayoutType>({
     queryKey: ["layout"],
-
     queryFn: () => fetchData(layoutQuery),
+    refetchOnWindowFocus: false,
   });
   const header = useRef<HTMLDivElement>(null);
   const { pathname } = useLocation();
@@ -24,15 +23,15 @@ const Layout = ({ children }: ILayout) => {
   }, [header, pathname]);
 
   return (
-    <ScrollArea>
+    <div>
       <div className="relative" ref={header}>
-        {!isLoading && <Header {...data!.header!} />}
+        {!isLoading && data?.header && <Header {...data?.header} />}
 
         {children}
       </div>
 
-      {!isLoading && <Footer {...data!.footer!} />}
-    </ScrollArea>
+      {!isLoading && data?.footer && <Footer {...data?.footer} />}
+    </div>
   );
 };
 

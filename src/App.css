@@ -86,6 +86,35 @@ input:-webkit-autofill:active {
   display: none;
 }
 
+/* width */
+::-webkit-scrollbar {
+  width: 12px;
+}
+
+/* Track */
+::-webkit-scrollbar-track {
+  background: #07221d;
+}
+
+/* Handle */
+::-webkit-scrollbar-thumb {
+  background: linear-gradient(
+    205.47deg,
+    #2baa83 8.69%,
+    #0c423d 46.73%,
+    #00090d 80.96%
+  );
+  border-radius: 12px;
+}
+
+/* Handle on hover */
+::-webkit-scrollbar-thumb:hover {
+  background: #42eca8;
+  -webkit-transition: background-color 1000ms linear;
+  -ms-transition: background-color 1000ms linear;
+  transition: background-color 1000ms linear;
+}
+
 .MuiStack-root {
   padding: 0 !important;
 }
