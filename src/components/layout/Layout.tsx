@@ -1,4 +1,6 @@
 import { useQuery } from "@tanstack/react-query";
+import { useEffect, useRef } from "react";
+import { useLocation } from "react-router-dom";
 
 import { fetchData } from "@/api/data-fetcher";
 import { layoutQuery } from "@/lib/queries/layout";
@@ -14,10 +16,16 @@ const Layout = ({ children }: ILayout) => {
 
     queryFn: () => fetchData(layoutQuery),
   });
+  const header = useRef<HTMLDivElement>(null);
+  const { pathname } = useLocation();
+
+  useEffect(() => {
+    if (header.current) header.current.scrollIntoView({ behavior: "smooth" });
+  }, [header, pathname]);
 
   return (
     <ScrollArea>
-      <div className="relative">
+      <div className="relative" ref={header}>
         {!isLoading && <Header {...data!.header!} />}
 
         {children}
