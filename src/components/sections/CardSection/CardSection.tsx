@@ -38,9 +38,9 @@ const CardSection = (props: CardComponentData) => {
           padding,
         }}
       >
-        <SectionContainer className="main-container">
+        <SectionContainer className="main-container -mt-[15px] !space-y-[80px] !px-16">
           <div className="space-y-[30px] px-5 text-center">
-            <p className="font-lyon text-[32px] leading-[38.4px] tracking-[-2%] md:text-[66px] md:leading-[79.2px]">
+            <p className="font-lyon text-[32px] leading-[38.4px] -tracking-[1.25px] md:text-[66px] md:leading-[79.2px]">
               {header[translation]}
             </p>
 

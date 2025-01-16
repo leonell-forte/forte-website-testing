@@ -32,7 +32,7 @@ const BigCardSection = (props: Type) => {
     <div style={{ padding }}>
       <SectionContainer className="main-container">
         <div className="space-y-[15px] text-center md:space-y-[30px]">
-          <p className="font-lyon text-[32px] leading-[38.4px] tracking-[-2%] md:text-[66px] md:leading-[79.2px]">
+          <p className="font-lyon text-[32px] leading-[38.4px] -tracking-[1.25px] md:text-[66px] md:leading-[79.2px]">
             {title[translation]}
           </p>
 

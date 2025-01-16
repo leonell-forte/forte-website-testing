@@ -1,9 +1,9 @@
-import classNames from "classnames";
-import { Link } from "react-router-dom";
+import { Link, useLocation } from "react-router-dom";
 
 import arrow from "@/assets/images/icons/arrow.svg";
 import { useResponsivePadding, useTranslation } from "@/lib/hooks";
 import { SmallCardContent as Type } from "@/lib/types/components";
+import { cn } from "@/lib/utilities/cn";
 
 import SectionContainer from "../ui/section-container/SectionContainer";
 
@@ -32,11 +32,15 @@ const SmallCardSection = (props: Type) => {
 
   const { translation } = useTranslation();
 
+  const { pathname } = useLocation();
+
+  const isAbout = pathname.includes("about");
+
   return (
     <div style={{ padding }}>
-      <SectionContainer className="main-container">
+      <SectionContainer className="main-container -mt-[15px] !space-y-[80px] !px-16">
         <div className="space-y-[15px] text-center md:space-y-[30px]">
-          <p className="font-lyon text-[32px] leading-[38.4px] tracking-[-2%] md:text-[66px] md:leading-[79.2px]">
+          <p className="font-lyon text-[32px] leading-[38.4px] -tracking-[1.25px] md:text-[66px] md:leading-[79.2px]">
             {title[translation]}
           </p>
 
@@ -69,15 +73,20 @@ const SmallCardSection = (props: Type) => {
                   </Link>
                 )}
                 <p
-                  className={classNames(
-                    "font-lyon text-[27px] leading-[32.4px] md:text-[36px] md:leading-[38.2px]",
+                  className={cn(
+                    "font-lyon text-[27px] leading-[32.4px] tracking-normal md:text-[36px] md:leading-[38.2px]",
                     link ? "lg:max-w-[295px]" : ""
                   )}
                 >
                   {title[translation]}
                 </p>
 
-                <p className="text-[15px] font-light md:text-[18px]">
+                <p
+                  className={cn(
+                    "text-[15px] font-light leading-[21.6px] md:text-[18px]",
+                    isAbout ? "mr-[40px]" : ""
+                  )}
+                >
                   {description[translation]}
                 </p>
               </div>

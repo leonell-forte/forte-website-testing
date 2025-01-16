@@ -47,6 +47,7 @@
 
 .font-lyon {
   font-family: "Lyon", sans-serif !important;
+  text-wrap: wrap;
 }
 
 body {

@@ -1,3 +1,5 @@
+import { useLocation } from "react-router-dom";
+
 import dot from "@/assets/images/icons/dot.svg";
 import SectionContainer from "@/components/ui/section-container/SectionContainer";
 import {
@@ -6,10 +8,15 @@ import {
   useTranslation,
 } from "@/lib/hooks";
 import { FeatureSectionData } from "@/lib/types/components";
+import { cn } from "@/lib/utilities/cn";
 
 const FeatureSection = (props: FeatureSectionData) => {
   const { features, title, mobilePadding, tabletPadding, desktopPadding } =
     props;
+
+  const { pathname } = useLocation();
+
+  const isExpertise = pathname.includes("expertise");
 
   const { isDesktop } = useScreenSize();
 
@@ -31,7 +38,12 @@ const FeatureSection = (props: FeatureSectionData) => {
         }}
       >
         <SectionContainer>
-          <p className="text-center font-lyon text-[32px] leading-[38.4px] tracking-[-2%] md:text-[66px] md:leading-[66px] lg:leading-[79.2px]">
+          <p
+            className={cn(
+              "text-center font-lyon text-[32px] leading-[38.4px] -tracking-[1.25px] md:text-[66px] md:leading-[66px] lg:mx-auto lg:leading-[79.2px]",
+              isExpertise ? "lg:max-w-[1024px]" : "-mt-[50px]"
+            )}
+          >
             {title[translation]}
           </p>
 
@@ -42,9 +54,21 @@ const FeatureSection = (props: FeatureSectionData) => {
               return (
                 <div
                   key={index}
-                  className="space-y-10 rounded-[9px] bg-[#30F1FF1A] px-5 py-10 md:space-y-[60px] md:px-10 md:py-[60px] lg:py-[80px]"
+                  className={cn(
+                    "rounded-[15px] bg-[#30F1FF1A] px-5 py-10 md:py-[60px] lg:max-w-[1320px] lg:px-16 lg:py-[80px]",
+                    isExpertise
+                      ? "space-y-10 lg:max-h-[836px]"
+                      : "space-y-8 md:px-10 lg:max-h-[800px]"
+                  )}
                 >
-                  <div className="flex flex-col gap-x-12 gap-y-12 lg:min-h-[487px] lg:flex-row lg:justify-between">
+                  <div
+                    className={cn(
+                      "flex flex-col gap-x-12 gap-y-12 lg:flex-row lg:justify-between",
+                      isExpertise
+                        ? "-mt-[13px] lg:min-h-[487px]"
+                        : "-mt-[13px] lg:min-h-[510px]"
+                    )}
+                  >
                     <div className="flex-1 space-y-[30px] text-balance">
                       <p className="text-[10px] text-mint md:text-[17px]">
                         {title[translation]}
@@ -64,7 +88,10 @@ const FeatureSection = (props: FeatureSectionData) => {
                     <img
                       src={image.url}
                       alt="feature-image"
-                      className="h-fit lg:max-w-[488px]"
+                      className={cn(
+                        "h-fit",
+                        isExpertise ? "lg:max-h-[506px]" : "lg:max-w-[488px]"
+                      )}
                       style={{
                         margin: isDesktop ? item.imagePadding : "0px",
                       }}
@@ -78,7 +105,10 @@ const FeatureSection = (props: FeatureSectionData) => {
                       return (
                         <div
                           key={index}
-                          className="flex items-start gap-2 border-t pb-[25px] pt-[20px] md:gap-3 md:pb-[50px] md:pt-[30px] lg:gap-4 lg:pb-0 lg:pr-[92px] lg:pt-[50px]"
+                          className={cn(
+                            "flex items-start gap-2 border-t pb-[25px] pt-[20px] md:gap-3 md:pb-[50px] md:pt-[30px] lg:gap-4 lg:pb-0 lg:pt-[40px]",
+                            isExpertise ? "lg:pr-[92px]" : "lg:pr-[60px]"
+                          )}
                         >
                           {bullet ? (
                             <>
