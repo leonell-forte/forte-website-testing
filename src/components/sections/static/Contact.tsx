@@ -55,11 +55,12 @@ const Contact = (props: ContactProps) => {
               <Controller
                 control={control}
                 name="phoneNumber"
-                render={({ field: { onChange } }) => (
+                render={({ field: { onChange, value } }) => (
                   <InputMobile
                     onChange={onChange}
                     label="Phone"
                     name="phoneNumber"
+                    value={value}
                   />
                 )}
               />

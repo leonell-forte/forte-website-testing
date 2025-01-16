@@ -54,6 +54,7 @@ type Props = {
   maxLength?: number;
   placeholder?: string;
   type?: "text" | "email";
+  value?: string;
   onChange: (str: string) => void;
 } & WrapperProps;
 
@@ -64,13 +65,14 @@ const InputMobile = React.forwardRef<HTMLInputElement, Props>(function FI({
   placeholder = undefined,
   label,
   onChange,
+  value = "",
 }) {
   const {
     formState: { errors },
   } = useFormContext();
   const error = errors[name];
   const errorMessage = error?.message as string;
-  const [local, setLocal] = React.useState("");
+  const [local, setLocal] = React.useState(value);
 
   const { inputValue, handlePhoneValueChange, inputRef, country, setCountry } =
     usePhoneInput({
@@ -82,6 +84,10 @@ const InputMobile = React.forwardRef<HTMLInputElement, Props>(function FI({
         onChange(data.phone);
       },
     });
+
+  React.useEffect(() => {
+    if (value === "") setLocal("");
+  }, [value]);
 
   return (
     <FormFieldWrapper
