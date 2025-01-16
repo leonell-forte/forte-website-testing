@@ -42,9 +42,11 @@ const Header = (props: IHeader) => {
                 <Link to={link} key={index}>
                   <li
                     className={classNames(
-                      "flex h-[27px] items-center justify-center rounded-[50px] px-5 font-medium",
+                      "flex h-[27px] min-w-[84px] items-center justify-center rounded-[50px] px-5 font-medium",
 
-                      isSelected && "bg-[#FFFFFF33]"
+                      isSelected
+                        ? "bg-[#FFFFFF33]"
+                        : "transition duration-300 hover:text-mint"
                     )}
                   >
                     {label[translation]}

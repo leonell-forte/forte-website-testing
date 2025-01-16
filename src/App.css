@@ -47,6 +47,7 @@
 
 .font-lyon {
   font-family: "Lyon", sans-serif !important;
+  text-wrap: wrap;
 }
 
 body {
@@ -83,6 +84,35 @@ input:-webkit-autofill:active {
 
 .hide-scroll::-webkit-scrollbar {
   display: none;
+}
+
+/* width */
+::-webkit-scrollbar {
+  width: 12px;
+}
+
+/* Track */
+::-webkit-scrollbar-track {
+  background: #07221d;
+}
+
+/* Handle */
+::-webkit-scrollbar-thumb {
+  background: linear-gradient(
+    205.47deg,
+    #2baa83 8.69%,
+    #0c423d 46.73%,
+    #00090d 80.96%
+  );
+  border-radius: 12px;
+}
+
+/* Handle on hover */
+::-webkit-scrollbar-thumb:hover {
+  background: #42eca8;
+  -webkit-transition: background-color 1000ms linear;
+  -ms-transition: background-color 1000ms linear;
+  transition: background-color 1000ms linear;
 }
 
 .MuiStack-root {
@@ -126,6 +156,10 @@ input:-webkit-autofill:active {
 
   li::marker {
     font-size: 1.5rem;
+  }
+
+  a {
+    @apply transition hover:text-mint;
   }
 
   @media (max-width: 640px) {

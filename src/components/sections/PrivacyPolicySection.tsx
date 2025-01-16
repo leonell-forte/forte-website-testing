@@ -7,6 +7,13 @@ import { PrivacyPolicyContent as Type } from "@/lib/types/components";
 
 import SectionContainer from "../ui/section-container/SectionContainer";
 
+DOMPurify.addHook("afterSanitizeAttributes", function (node) {
+  if ("target" in node && node instanceof HTMLElement) {
+    node.setAttribute("target", "_blank");
+    node.setAttribute("rel", "noopener");
+  }
+});
+
 const PrivacyPolicy = (props: Type) => {
   const { title, content } = props;
 

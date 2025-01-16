@@ -14,7 +14,7 @@ const Card = (props: Cardtype) => {
         "flex rounded-[9px] bg-[#30F1FF1A] backdrop-blur-[69.83px] md:rounded-[18px] lg:flex-shrink-0",
         withBottomPadding
           ? "h-full flex-col gap-[120px] px-5 pb-5 pt-5 md:flex-row md:items-center md:gap-[40px] md:px-10 md:pb-[56px] md:pt-10 lg:flex-col lg:items-start lg:gap-[76px] lg:px-8 lg:pb-[74px] lg:pt-8"
-          : "h-full flex-col justify-between p-7 md:gap-[90px] lg:min-h-[426px]"
+          : "h-full flex-col justify-between p-7 md:gap-[100px] lg:min-h-[426px]"
       )}
     >
       <div
@@ -30,7 +30,7 @@ const Card = (props: Cardtype) => {
             className={classNames(
               withBottomPadding
                 ? "w-[80px] bg-cover md:w-[100px] lg:h-[106px] lg:w-[120px]"
-                : "hidden max-h-[60px] md:block"
+                : "hidden h-[60px] max-w-fit md:block"
             )}
           />
         )}
@@ -40,7 +40,7 @@ const Card = (props: Cardtype) => {
         className={classNames(
           withBottomPadding
             ? "space-y-[22px] sm:space-y-[30px]"
-            : "space-y-[60px] md:space-y-[30px]"
+            : "space-y-[60px] md:space-y-4"
         )}
       >
         <p className="font-lyon text-[27px] leading-[32.4px] md:text-[36px] md:leading-[43.2px]">

@@ -31,7 +31,7 @@ const Footer = (props: IFooter) => {
                 <Link
                   key={index}
                   to={link}
-                  className="text-[15px] font-medium md:text-[18px]"
+                  className="w-fit text-[15px] font-medium transition duration-300 hover:text-mint md:text-[18px]"
                 >
                   {label[translation]}
                 </Link>
@@ -46,7 +46,7 @@ const Footer = (props: IFooter) => {
                 <Link
                   key={index}
                   to={link}
-                  className="text-[15px] font-medium md:text-[18px]"
+                  className="w-fit text-[15px] font-medium transition duration-300 hover:text-mint md:text-[18px]"
                 >
                   {label[translation]}
                 </Link>

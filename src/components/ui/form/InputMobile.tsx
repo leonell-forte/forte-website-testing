@@ -1,5 +1,5 @@
 import * as SelectPrimitive from "@radix-ui/react-select";
-import { ChevronDown, ChevronUp } from "lucide-react";
+import { ChevronDown } from "lucide-react";
 import * as React from "react";
 import { useFormContext } from "react-hook-form";
 import {
@@ -15,13 +15,7 @@ import { cn } from "@/lib/utilities/cn";
 import FormFieldWrapper, {
   type Props as WrapperProps,
 } from "./FormFieldWrapper";
-import {
-  Select,
-  SelectContent,
-  SelectItem,
-  SelectTrigger,
-  SelectValue,
-} from "./Select";
+import { Select, SelectContent, SelectItem, SelectTrigger } from "./Select";
 
 export const CustomTrigger = React.forwardRef<
   React.ElementRef<typeof SelectPrimitive.Trigger>,
@@ -54,23 +48,25 @@ type Props = {
   maxLength?: number;
   placeholder?: string;
   type?: "text" | "email";
+  value?: string;
   onChange: (str: string) => void;
 } & WrapperProps;
 
-const InputMobile = React.forwardRef<HTMLInputElement, Props>(function FI({
+const InputMobile = ({
   name,
   disabled = false,
   readOnly = false,
   placeholder = undefined,
   label,
   onChange,
-}) {
+  value = "",
+}: Props) => {
   const {
     formState: { errors },
   } = useFormContext();
   const error = errors[name];
   const errorMessage = error?.message as string;
-  const [local, setLocal] = React.useState("");
+  const [local, setLocal] = React.useState(value);
 
   const { inputValue, handlePhoneValueChange, inputRef, country, setCountry } =
     usePhoneInput({
@@ -82,6 +78,10 @@ const InputMobile = React.forwardRef<HTMLInputElement, Props>(function FI({
         onChange(data.phone);
       },
     });
+
+  React.useEffect(() => {
+    if (value === "") setLocal("");
+  }, [value]);
 
   return (
     <FormFieldWrapper
@@ -150,6 +150,6 @@ const InputMobile = React.forwardRef<HTMLInputElement, Props>(function FI({
       </div>
     </FormFieldWrapper>
   );
-});
+};
 
 export default InputMobile;

@@ -69,16 +69,17 @@ const HeroSection = (props: HeroComponentData) => {
           padding,
         }}
       >
-        <div className="mx-auto flex max-w-[1200px] flex-col items-center gap-[60px] text-center md:gap-[100px]">
+        <div className="mx-auto flex max-w-[1200px] flex-col items-center gap-[60px] text-center md:gap-[90px]">
           <div className="space-y-[30px] md:space-y-[45px]">
-            <p className="font-lyon text-[40px] leading-[44px] md:text-[82px] md:leading-[90.2px]">
-              {mainText[translation]}
-            </p>
+            <div className="space-y-[30px]">
+              <p className="font-lyon text-[40px] leading-[44px] md:text-[82px] md:leading-[90.2px]">
+                {mainText[translation]}
+              </p>
 
-            <p className="text-[15px] leading-[18px] md:text-[22px] md:leading-[26.4px]">
-              {secondaryText[translation]}
-            </p>
-
+              <p className="mx-auto text-[15px] leading-[18px] md:text-[22px] md:leading-[26.4px] lg:w-[790px]">
+                {secondaryText[translation]}
+              </p>
+            </div>
             <div className="flex justify-center">
               <Button href={buttonLink} variant="mint">
                 {buttonLabel[translation]}
