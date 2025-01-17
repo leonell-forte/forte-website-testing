@@ -6,8 +6,6 @@ import { IFooter } from "@/lib/types/layout";
 const Footer = (props: IFooter) => {
   const { logo, description, links, socials, credits } = props;
 
-  console.log(props);
-
   const { translation } = useTranslation();
 
   return (
