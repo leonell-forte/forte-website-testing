@@ -6,6 +6,8 @@ import { IFooter } from "@/lib/types/layout";
 const Footer = (props: IFooter) => {
   const { logo, description, links, socials, credits } = props;
 
+  console.log(props);
+
   const { translation } = useTranslation();
 
   return (
@@ -42,6 +44,7 @@ const Footer = (props: IFooter) => {
           <ul className="flex flex-col gap-5 md:gap-[20px]">
             {socials.map((item, index) => {
               const { label, link } = item;
+              console.log(item);
               return (
                 <Link
                   key={index}
