@@ -120,6 +120,10 @@ input:-webkit-autofill:active {
 }
 
 .rich-container {
+  strong {
+    font-weight: 600;
+  }
+
   h1 {
     font-size: 50px;
     font-weight: 400;
