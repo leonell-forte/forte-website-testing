@@ -20,11 +20,18 @@ const RouteProvider = () => {
   });
 
   return (
-    <Router>
+    <Router
+      future={{
+        v7_relativeSplatPath: true,
+        v7_startTransition: true,
+      }}
+    >
       <Layout>
         <div>
           <AnimatePresence mode="wait">
             <Routes>
+              <Route path="*" element={<div />} />
+
               {data?.allPages.map((item, index) => {
                 const { slug, id } = item;
                 return (
