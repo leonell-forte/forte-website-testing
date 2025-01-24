@@ -59,7 +59,7 @@ const Carousel = (props: ICarousel) => {
     <div className="relative flex items-center justify-center gap-5 py-6">
       <button
         onClick={handlePrev}
-        className="hidden h-[34px] w-[34px] flex-shrink-0 items-center justify-center rounded-full border opacity-50 lg:flex"
+        className="hidden h-[34px] w-[34px] flex-shrink-0 items-center justify-center rounded-full border-2 opacity-50 lg:flex"
       >
         <img
           src={chevron}
@@ -108,7 +108,7 @@ const Carousel = (props: ICarousel) => {
 
       <button
         onClick={handleNext}
-        className="hidden h-[34px] w-[34px] flex-shrink-0 items-center justify-center rounded-full border opacity-50 lg:flex"
+        className="hidden h-[34px] w-[34px] flex-shrink-0 items-center justify-center rounded-full border-2 opacity-50 lg:flex"
       >
         <img
           src={chevron}
