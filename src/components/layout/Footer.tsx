@@ -42,7 +42,7 @@ const Footer = (props: IFooter) => {
           <ul className="flex flex-col gap-5 md:gap-[20px]">
             {socials.map((item, index) => {
               const { label, link } = item;
-              console.log(item);
+
               return (
                 <Link
                   key={index}

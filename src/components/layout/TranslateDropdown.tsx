@@ -17,9 +17,10 @@ const TranslateDropdown = () => {
   const { translation, setTranslation } = useTranslation();
 
   return (
-    <button
+    <div
       ref={ref}
       className="relative flex w-[57px] justify-between gap-2"
+      role="button"
       onClick={() => setShow((prev) => !prev)}
     >
       <img src={world} alt="world" />
@@ -51,7 +52,7 @@ const TranslateDropdown = () => {
           })}
         </ul>
       )}
-    </button>
+    </div>
   );
 };
 
