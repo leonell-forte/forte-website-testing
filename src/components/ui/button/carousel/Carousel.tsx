@@ -70,7 +70,7 @@ const Carousel = (props: ICarousel) => {
 
       <div
         ref={carouselRef}
-        className="hide-scroll flex snap-x items-center gap-2.5 overflow-scroll"
+        className="hide-scroll flex snap-x items-center gap-2.5 overflow-hidden rounded-[9px]"
       >
         {items.map((item, index) => {
           const { mainText, secondaryText, image } = item;
